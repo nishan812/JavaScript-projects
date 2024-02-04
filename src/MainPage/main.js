@@ -1,4 +1,4 @@
-const normalBody = document.querySelector(".normal");
+const normalBody = document.querySelector(".normalList");
 
 //heading for normal projects
 const normalListHeading = document.createElement("h2");
@@ -89,6 +89,50 @@ mrsRedirect.appendChild(mrsAnchor);
 mrsAnchor.innerHTML = "Movie Recommendation System";
 mrsAnchor.setAttribute("href", "#");
 
+/*
+ 
+From here third box is started Intermediate Level projects
+ 
+*/
+
+//gettinig root for box of list that contains intermediate level projects list
+const intermdiateProjectsBody = document.querySelector(".intermediateList");
+
+
+// Heading for intermediate level projects
+
+const intermediateHeading = document.createElement("h2");
+intermediateHeading.innerHTML="Intermediate Projects"
+intermdiateProjectsBody.appendChild(intermediateHeading)
+
+// Button for redirect to chat application
+const chatAppRedirect = document.createElement("li");
+const chatAppAnchor = document.createElement("a");
+chatAppRedirect.appendChild(chatAppAnchor)
+chatAppAnchor.setAttribute("href","#");
+chatAppAnchor.innerHTML="<a>Chat Application</a>"
+
+// Button to redirect to Wikipedia Search System
+const wssRedirect = document.createElement("li");
+const wssAnchor = document.createElement("a");
+wssRedirect.appendChild(wssAnchor)
+wssAnchor.setAttribute("href","#");
+wssAnchor.innerHTML="<a>Wikipedia Search</a>"
+
+// Button to redirect to Dictionary App
+const dictAppRedirect = document.createElement("li");
+const dictAppAnchor = document.createElement("a");
+dictAppRedirect.appendChild(dictAppAnchor)
+dictAppAnchor.setAttribute("href","#");
+dictAppAnchor.innerHTML="<a>Dictionary App</a>"
+
+// Button to redirect to send Message on whatsapp
+const smowRedirect = document.createElement("li");
+const smowAnchor = document.createElement("a");
+smowRedirect.appendChild(smowAnchor)
+smowAnchor.setAttribute("href","#");
+smowAnchor.innerHTML="<a>Send Message on Whatsapp</a>"
+
 
 
 
@@ -108,3 +152,11 @@ const apiProjectsListSorting = [
   [apiProjectsBody.appendChild(githubProfileViewerRedirect)],
   [apiProjectsBody.appendChild(mrsRedirect)]
 ];
+
+const intermediateProjectListSorting = [
+    [intermdiateProjectsBody.appendChild(chatAppRedirect)],
+    [intermdiateProjectsBody.appendChild(wssRedirect)],
+    [intermdiateProjectsBody.appendChild(dictAppRedirect)],
+    [intermdiateProjectsBody.appendChild(smowRedirect)]
+
+]
