@@ -30,7 +30,7 @@ countdownAnchor.setAttribute("href", "#");
 const todoRedirect = document.createElement("li");
 const todoAnchor = document.createElement("a");
 todoRedirect.appendChild(todoAnchor);
-todoAnchor.innerHTML = "Todo App";
+todoAnchor.innerHTML = "Todo List App";
 todoAnchor.setAttribute("href", "#");
 
 // Button to redirect to  background color picker
@@ -131,7 +131,7 @@ const smowRedirect = document.createElement("li");
 const smowAnchor = document.createElement("a");
 smowRedirect.appendChild(smowAnchor)
 smowAnchor.setAttribute("href","#");
-smowAnchor.innerHTML="<a>Send Message on Whatsapp</a>"
+smowAnchor.innerHTML="<a>Send a Message to a User on Whatsapp</a>"
 
 
 
@@ -155,8 +155,8 @@ const apiProjectsListSorting = [
 
 const intermediateProjectListSorting = [
     [intermdiateProjectsBody.appendChild(chatAppRedirect)],
+    [intermdiateProjectsBody.appendChild(smowRedirect)]
     [intermdiateProjectsBody.appendChild(wssRedirect)],
     [intermdiateProjectsBody.appendChild(dictAppRedirect)],
-    [intermdiateProjectsBody.appendChild(smowRedirect)]
 
 ]
