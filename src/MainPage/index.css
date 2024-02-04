@@ -6,12 +6,14 @@
 
 body{
     height: 100vh;
-    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.root{
-    height:20%;
-    width: 50%;
+.mainContainer{
+    height:500px;
+    width: 500px;
     border: 2px solid black;
 }
