@@ -17,3 +17,9 @@ body{
     width: 500px;
     border: 2px solid black;
 }
+.normal{
+    border: 2px solid black;
+}
+.apiProjectsList{
+    border: 2px solid black;
+}
