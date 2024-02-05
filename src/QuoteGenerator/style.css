@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: border-box;
+    font-family: "EB Garamond", serif;
+  }
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      130deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(65, 65, 144, 1) 50%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    color: #fae7f3;
+  }
+  
+  .container {
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top: 2px solid #427d9d;
+    border-right: 2px solid #427d9d;
+    border-left: 2px solid #427d9d;
+  
+    height: 350px;
+    width: 450px;
+  }
+  
+  .header {
+    border-bottom: 2px solid black;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header span {
+    font-size: 30px;
+  }
+  
+  .content-area {
+    height: 295px;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-area-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 200px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .quotes-container {
+    height: 150px;
+    width: 350px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .quote {
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    height: 100px;
+    background-color: #e5e1da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .author {
+    font-weight: bold;
+    color: #ffa732;
+    font-size: 25px;
+  }
+  /* .change-button {
+    font-size: 18px;
+    height: 50px;
+    width: 100px;
+  } */
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+  }
+  .clickCount {
+    border-bottom: 2px solid #427d9d;
+    border-left: 2px solid #427d9d;
+    border-right: 2px solid #427d9d;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 450px;
+  }
+  /* button style */
+  .cssbuttons-io-button {
+    background: #a370f0;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+  }
+  
+  .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  
+  .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }
+  

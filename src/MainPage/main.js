@@ -73,14 +73,14 @@ const quoteGeneratorRedirect = document.createElement("li");
 const quoteGeneratorAnchor = document.createElement("a");
 quoteGeneratorRedirect.appendChild(quoteGeneratorAnchor);
 quoteGeneratorAnchor.innerHTML = "Quote Generator";
-quoteGeneratorAnchor.setAttribute("href", "https://quote-generator-xi-teal.vercel.app/");
+quoteGeneratorAnchor.setAttribute("href", "/src/QuoteGenerator/index.html");
 
 // Button that redirects to github profile Viewer
 const githubProfileViewerRedirect = document.createElement("li");
 const githubProfileViewerAnchor = document.createElement("a");
 githubProfileViewerRedirect.appendChild(githubProfileViewerAnchor);
 githubProfileViewerAnchor.innerHTML = "Github profile Viewer";
-githubProfileViewerAnchor.setAttribute("href", "#");
+githubProfileViewerAnchor.setAttribute("href", "/src/GithubProfileViewer/index.html");
 
 // Button that redirects to Movie Recommendation System
 const mrsRedirect = document.createElement("li");
