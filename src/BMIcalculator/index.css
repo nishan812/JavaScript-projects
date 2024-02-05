@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.mainContainer{
+    background-color: #211C6A;
+    color: #FFF7F1;
+    margin-top: 10%;
+    min-width:500px;
+    min-height:400px;
+    max-width: 500px;
+    max-height:400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight:bold ;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.heightInput{
+    background-color: aqua;
+    height:50px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+}
+#heightData{
+    width: 60%;
+}
+#heightOutput{
+font-weight: bold;
+
+}
+.weightInput{
+    background-color: green;
+    height:50px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+}
+#weightData{
+    width: 60%;
+}
+#weightOutput{
+    font-weight: bold;
+
+
+}
+.result{
+    background-color: gray;
+    height: 100px;
+    width: 50%;
+
+}
+#result{
+
+}
+#calculateButton{
+    height: 50px;
+    width: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainContainer {
+      background-color: lightblue;
+    margin-top: 10%;
+    min-width: 400px;
+    min-height:400px;
+    max-width:400px ;
+    max-height:400px;
+    }
+  }

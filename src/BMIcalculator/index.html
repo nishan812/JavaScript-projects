@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    
-    
-<script src="main.js"></script>
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+        
+      <div class="heading">Body Mass Index Calculator</div>
+      <div class="result">
+        <label for="" id="result"></label>
+      </div>
+      <div class="heightInput">
+        <input type="range" id="heightData" value="20" max="200" />
+        <label for="" id="heightOutput"></label>
+      </div>
+      <div class="weightInput">
+        <input type="range" id="weightData" max="150" value="20" />
+        <label for="" id="weightOutput"></label>
+      </div>
+
+      <div class="calcBody">
+        <button id="calculateButton">Calculate</button>
+      </div>
+      
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>
