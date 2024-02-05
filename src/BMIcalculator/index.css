@@ -97,7 +97,7 @@ font-weight: bold;
 
 @media only screen and (max-width: 600px) {
     .mainContainer {
-      background-color: lightblue;
+      background-color: #0F1035;
     margin-top: 10%;
     min-width: 400px;
     min-height:400px;
