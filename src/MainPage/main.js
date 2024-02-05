@@ -73,7 +73,7 @@ const quoteGeneratorRedirect = document.createElement("li");
 const quoteGeneratorAnchor = document.createElement("a");
 quoteGeneratorRedirect.appendChild(quoteGeneratorAnchor);
 quoteGeneratorAnchor.innerHTML = "Quote Generator";
-quoteGeneratorAnchor.setAttribute("href", "#");
+quoteGeneratorAnchor.setAttribute("href", "https://quote-generator-xi-teal.vercel.app/");
 
 // Button that redirects to github profile Viewer
 const githubProfileViewerRedirect = document.createElement("li");
