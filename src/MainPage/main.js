@@ -10,7 +10,7 @@ const bmiRedirect = document.createElement("li");
 const bmiAnchor = document.createElement("a");
 bmiRedirect.appendChild(bmiAnchor);
 bmiAnchor.innerHTML = "BMI Calculator";
-bmiAnchor.setAttribute("href", "#");
+bmiAnchor.setAttribute("href", "/src/BMIcalculator/index.html");
 
 // Button to redirect to form validation page
 const formValidationRedirect = document.createElement("li");
