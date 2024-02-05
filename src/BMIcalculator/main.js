@@ -5,7 +5,22 @@ const output = document.querySelector("#result");
 
 calculateButton.addEventListener("click",()=>{
     const result =(calculateBMI(height.value,weight.value))
-    output.innerHTML=result
+
+    if(result<18.5){
+        output.innerHTML=`${result} Underweight`
+    }
+    else if(result>=18.5 && result<=25.9){
+        output.innerHTML=`${result} Normal`
+    }
+    else if(result>=25.0 && result<=29.9){
+        output.innerHTML=`${result} Overweight`
+    }
+    else if(result>=30 && result<=34){
+        output.innerHTML=`${result} Obese`
+    }
+    else if(result>=35){
+        output.innerHTML=`${result} Extremely Obese`
+    }
 
    
 })
@@ -13,15 +28,8 @@ calculateButton.addEventListener("click",()=>{
 function calculateBMI(h,w){
    return (((w) / (h **2))*10000).toFixed(2)
 }
-
-
-
-
-
-
-
-
-
+let outerRes= calculateBMI(height.value,weight.value)
+output.innerHTML=`${outerRes} Normal`
 
 
 

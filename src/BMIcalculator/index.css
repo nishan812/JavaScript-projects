@@ -8,7 +8,7 @@ body{
     justify-content: center;
 }
 .mainContainer{
-    background-color: #211C6A;
+    background-color: #0F1035;
     color: #FFF7F1;
     margin-top: 10%;
     min-width:500px;
@@ -32,7 +32,8 @@ body{
 
 }
 .heightInput{
-    background-color: aqua;
+    background-color: #9F91CC;
+    border-radius: 50%;
     height:50px;
     width: 80%;
     display: flex;
@@ -49,7 +50,8 @@ font-weight: bold;
 
 }
 .weightInput{
-    background-color: green;
+    background-color: #9F91CC;
+    border-radius: 50%;
     height:50px;
     width: 80%;
     display: flex;
@@ -67,14 +69,21 @@ font-weight: bold;
 
 }
 .result{
-    background-color: gray;
+    background-color: #C7C8CC;
     height: 100px;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    font-weight: bold;
 
 }
-#result{
+/* #result{
+    
 
-}
+} */
 #calculateButton{
     height: 50px;
     width: 100px;
@@ -86,7 +95,7 @@ font-weight: bold;
     margin-top: 10%;
     min-width: 400px;
     min-height:400px;
-    max-width:400px ;
+    max-width: 400px ;
     max-height:400px;
     }
   }
