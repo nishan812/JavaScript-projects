@@ -9,6 +9,11 @@ body{
 }
 .mainContainer{
     background-color: #0F1035;
+    border-top-left-radius:15%;
+    border-bottom-right-radius:15%;
+    border-top-right-radius:5%;
+    border-bottom-left-radius:5%;
+
     color: #FFF7F1;
     margin-top: 10%;
     min-width:500px;
@@ -70,6 +75,7 @@ font-weight: bold;
 }
 .result{
     background-color: #C7C8CC;
+    border-radius:10% ;
     height: 100px;
     width: 50%;
     display: flex;
