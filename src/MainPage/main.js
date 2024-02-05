@@ -110,28 +110,28 @@ const chatAppRedirect = document.createElement("li");
 const chatAppAnchor = document.createElement("a");
 chatAppRedirect.appendChild(chatAppAnchor)
 chatAppAnchor.setAttribute("href","#");
-chatAppAnchor.innerHTML="<a>Chat Application</a>"
+chatAppAnchor.innerHTML="Chat Application"
 
 // Button to redirect to Wikipedia Search System
 const wssRedirect = document.createElement("li");
 const wssAnchor = document.createElement("a");
 wssRedirect.appendChild(wssAnchor)
 wssAnchor.setAttribute("href","#");
-wssAnchor.innerHTML="<a>Wikipedia Search</a>"
+wssAnchor.innerHTML="Wikipedia Search"
 
 // Button to redirect to Dictionary App
 const dictAppRedirect = document.createElement("li");
 const dictAppAnchor = document.createElement("a");
 dictAppRedirect.appendChild(dictAppAnchor)
 dictAppAnchor.setAttribute("href","#");
-dictAppAnchor.innerHTML="<a>Dictionary App</a>"
+dictAppAnchor.innerHTML="Dictionary App"
 
 // Button to redirect to send Message on whatsapp
 const smowRedirect = document.createElement("li");
 const smowAnchor = document.createElement("a");
 smowRedirect.appendChild(smowAnchor)
 smowAnchor.setAttribute("href","#");
-smowAnchor.innerHTML="<a>Send a Message to a User on Whatsapp</a>"
+smowAnchor.innerHTML="Send a Message to a User on Whatsapp"
 
 
 
@@ -153,9 +153,9 @@ const apiProjectsListSorting = [
   [apiProjectsBody.appendChild(mrsRedirect)]
 ];
 
-const intermediateProjectListSorting = [
+const intermediateProjectsListSorting = [
     [intermdiateProjectsBody.appendChild(chatAppRedirect)],
-    [intermdiateProjectsBody.appendChild(smowRedirect)]
+    [intermdiateProjectsBody.appendChild(smowRedirect)],
     [intermdiateProjectsBody.appendChild(wssRedirect)],
     [intermdiateProjectsBody.appendChild(dictAppRedirect)],
 
