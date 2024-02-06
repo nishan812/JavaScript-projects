@@ -17,7 +17,7 @@ const formValidationRedirect = document.createElement("li");
 const formValidationAnchor = document.createElement("a");
 formValidationRedirect.appendChild(formValidationAnchor);
 formValidationAnchor.innerHTML = "Form Validation";
-formValidationAnchor.setAttribute("href", "#");
+formValidationAnchor.setAttribute("href", "/src/formValidation/index.html");
 
 // Button to redirect to Countdown Timer
 const countdownTimerRedirect = document.createElement("li");
