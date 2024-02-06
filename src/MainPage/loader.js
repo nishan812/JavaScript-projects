@@ -13,6 +13,4 @@ setTimeout(() => {
     loader.remove()
     body.style.backgroundColor="#F9EFDB"
 
-
-
-}, 3600);
+}, 3100);
