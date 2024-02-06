@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form validation</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="sec.css" />
+  </head>
+  <body>
+    <div class="containerMain">
+      <div class="firstContainer">
+        <div class="formHeading">Form</div>
+        <div class="nameBox">
+          <label for="" id="firstname">Firstname</label>
+          <input type="text" id="middlename" class="input" />
+          <label for="">Middlename</label>
+          <input type="text" id="middlename" class="input" />
+          <label for="">Lastname</label>
+          <input type="text" id="lastname" class="input" />
 
+        
+        </div>
+      </div>
+      <div class="secondContainer">
+        <div class="genderAndAgeContainer">
+          <div class="genderCont">
+            <label for="">Gender</label>
+            <select name="" id="gender" class="input">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="ageCont">
+            <label for="">Age</label>
+            <input type="number" class="input" />
+          </div>
+        </div>
+        <div class="contactContainer">
+          <div class="phone">
+            <label for="">Phone</label>
+            <input type="number" class="input" />
+          </div>
+          <div class="email">
+            <label for="">Email</label>
+            <input type="text" class="input" />
+          </div>
+        </div>
+      </div>
+      <div class="thirdContainer"></div>
+    </div>
 
-
-
-
-    
     <script src=""></script>
-</body>
+  </body>
 </html>
