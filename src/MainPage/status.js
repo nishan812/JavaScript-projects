@@ -6,7 +6,7 @@ normalProjectsListSorting.forEach((itemBody) => {
       if (anchor.getAttribute("href") === "#") {
         anchor.parentElement.style.backgroundColor = "#A94438";
       }else{
-          anchor.parentElement.style.backgroundColor = "#74E291";
+          anchor.parentElement.style.backgroundColor = "#005B41";
       }
     });
   });
@@ -18,7 +18,7 @@ normalProjectsListSorting.forEach((itemBody) => {
       if (anchor.getAttribute("href") === "#") {
           anchor.parentElement.style.backgroundColor = "#A94438";
         }else{
-            anchor.parentElement.style.backgroundColor = "#74E291";
+            anchor.parentElement.style.backgroundColor = "#005B41";
         }
     });
   });
@@ -30,13 +30,7 @@ normalProjectsListSorting.forEach((itemBody) => {
       if (anchor.getAttribute("href") === "#") {
           anchor.parentElement.style.backgroundColor = "#A94438";
         }else{
-            anchor.parentElement.style.backgroundColor = "#74E291";
+            anchor.parentElement.style.backgroundColor = "#005B41";
         }
     });
   });
-  
-  
-  // const statusBody = document.querySelector(".statusInfoBox");
-  // setTimeout(() => {
-  //   statusBody.style.display="none";
-  // }, 6000);

@@ -38,7 +38,7 @@ header{
 }
 .avBox{
     margin-left:5%;
-    background-color: #74E291;
+    background-color: #005B41;
     border-radius: 5px;
     height: 16px;
     width: 80px;
@@ -52,7 +52,7 @@ header{
 
 }
 
-
+/* Main body styling */
 .mainContainer{
     margin-top: 2.5%;
     margin-bottom: 5%;
@@ -140,3 +140,11 @@ li{
     padding-bottom: 5%;
     border-bottom:2px solid #D63484 ;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .mainContainer{
+        width: 400px;
+    }
+   
+  }
