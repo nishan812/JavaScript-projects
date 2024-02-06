@@ -17,7 +17,7 @@ header{
     color: #E9F6FF;
     border-radius: 10%;
     background-color: #030637;
-    padding: 0.5%;
+    padding: 1%;
     margin-bottom: 1%;
     border: 5px double red;
     height: 20px;
@@ -28,27 +28,29 @@ header{
     gap: 5%;
 }
 .available{
+    width: 27%;
     display: flex;
     justify-content: space-evenly;
 }
 .unavailable{
+    width: 30%;
     display: flex;
     justify-content: space-evenly;
     
 }
 .avBox{
-    margin-left:5%;
     background-color: #005B41;
+    margin-left:5%;
     border-radius: 5px;
     height: 16px;
-    width: 80px;
+    width: 100%;
 }
 .unAvbox{
     background-color: #A94438;
     margin-left:5%;
     border-radius: 5px;
     height: 16px;
-    width: 100px;
+    width: 100%;
 
 }
 
