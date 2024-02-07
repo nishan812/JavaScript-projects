@@ -212,7 +212,7 @@ function isValidPhoneNumber(phoneNumber) {
  *
  *
  */
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (e) => {
  
   //Validation
   alertBox.innerHTML = "";
@@ -290,6 +290,9 @@ else{
           last_name: `${lastName.value}`,
           user_gender: `${gender.value}`,
           user_age: `${age.value}`,
+          isAdult :function(){
+            return parseInt(this.user_age) >= 18;
+          }()
         },
         userContactInfo: {
           user_phoneNumberr: `${phone.value}`,
@@ -309,7 +312,25 @@ else{
         },
       };
       console.log(userdata);
+      
+        // Clear all form fields
+  firstName.value = "";
+  middleName.value = "";
+  lastName.value = "";
+  gender.value = "";
+  age.value = "";
+  phone.value = "";
+  email.value = "";
+  pProvince.value = "";
+  pDistrict.value = "";
+  pMunicipality.value = "";
+  pWard.value = "";
+  cProvince.value = "";
+  cDistrict.value = "";
+  cMunicipality.value = "";
+  cWard.value = "";
 
+ 
 
 }
 
