@@ -12,11 +12,11 @@ bmiRedirect.appendChild(bmiAnchor);
 bmiAnchor.innerHTML = "BMI Calculator";
 bmiAnchor.setAttribute("href", "/src/BMIcalculator/index.html");
 
-// Button to redirect to form validation page
+// Button to redirect to form page
 const formValidationRedirect = document.createElement("li");
 const formValidationAnchor = document.createElement("a");
 formValidationRedirect.appendChild(formValidationAnchor);
-formValidationAnchor.innerHTML = "Form Validation";
+formValidationAnchor.innerHTML = "Form";
 formValidationAnchor.setAttribute("href", "/src/formValidation/index.html");
 
 // Button to redirect to Countdown Timer
