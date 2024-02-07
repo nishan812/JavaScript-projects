@@ -161,12 +161,35 @@ UpdateDistrictOptionsForPCurrent();
  * End
  */
 
-//evenlistener for same as permanent address button
+//evenlistener for same as permanent address button//////////////////////////////////////////////////
 sameAsPermanentAddressButton.addEventListener("click", () => {
+  // Set current address fields to match permanent address
   cProvince.value = pProvince.value;
-  cDistrict.value = pDistrict.value;
   cMunicipality.value = pMunicipality.value;
   cWard.value = pWard.value;
+
+  // Get the selected district from the permanent address
+  const selectedDistrict = pDistrict.value;
+
+  // Clear existing options in current district select element
+  cDistrict.innerHTML = "";
+
+  // Get the districts for the selected province
+  const districts = districtOptions[pProvince.value] || [];
+
+  // Add new options to current district select element
+  districts.forEach((district) => {
+    const option = document.createElement("option");
+    option.textContent = district;
+    option.value = district;
+    cDistrict.appendChild(option);
+  });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Find the option with the selected district and set it as selected
+  const selectedOption = cDistrict.querySelector(`option[value="${selectedDistrict}"]`);
+  if (selectedOption) {
+    selectedOption.selected = true;
+  }
 });
 
 // Function to validate Email address
