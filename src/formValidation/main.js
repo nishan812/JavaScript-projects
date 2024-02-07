@@ -1,5 +1,8 @@
 const userCardBody = document.querySelector(".userCardContainer");
+userCardBody.style.display="none"
+
 const body = document.querySelector("body");
+const contBody =document.querySelector(".containerMain")
 const alertBox = document.querySelector(".alertMsgSection");
 const firstName = document.querySelector("#firstname");
 const middleName = document.querySelector("#middlename");
@@ -439,6 +442,13 @@ submitButton.addEventListener("click", (e) => {
     cDistrict.value = "Bhojpur";
     cMunicipality.value = "";
     cWard.value = "";
+    userCardBody.style.display="block"
     console.log(userdata);
+    alertBox.remove()
+    submitButton.remove()
+    contBody.remove()
   }
+
+
+
 });

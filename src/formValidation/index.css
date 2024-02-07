@@ -149,7 +149,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-select{
+select {
   color: #ffffff;
 }
 .provinceAndDistrictContainer select {
@@ -216,21 +216,20 @@ select{
   justify-content: space-evenly;
   align-items: flex-start;
 }
-.alertMsgSection{
+.alertMsgSection {
   padding-top: 1%;
   color: #ff0000;
-
 }
-.userCardContainer{
-border-radius: 5%;
+.userCardContainer {
+  border-radius: 5%;
+  padding-top: 5%;
   padding-left: 5%;
   margin-bottom: 10%;
-  background-color: #B4D4FF;
-  height: 400px;
+  background-color: #b4d4ff;
+  height: 350px;
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-
 }
