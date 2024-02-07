@@ -122,7 +122,7 @@ const districtOptions = {
     "Darchula",
   ],
 };
-//for permanent
+//for permanent address
 function UpdateDistrictOptionsForPermanent() {
   const selectedProvince = pProvince.value;
   const districts = districtOptions[selectedProvince] || [];
@@ -130,7 +130,7 @@ function UpdateDistrictOptionsForPermanent() {
   //clear existing options
   pDistrict.innerHTML = "";
 
-  // add new options
+  // adding new options
   districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
@@ -140,7 +140,7 @@ function UpdateDistrictOptionsForPermanent() {
 pProvince.addEventListener("change", UpdateDistrictOptionsForPermanent);
 UpdateDistrictOptionsForPermanent();
 
-// for currentAddress
+// for currentAddress address
 function UpdateDistrictOptionsForPCurrent() {
   const selectedProvince = cProvince.value;
   const districts = districtOptions[selectedProvince] || [];
@@ -148,7 +148,7 @@ function UpdateDistrictOptionsForPCurrent() {
   //clear existing options
   cDistrict.innerHTML = "";
 
-  // add new options
+  // adding new options
   districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
@@ -163,30 +163,32 @@ UpdateDistrictOptionsForPCurrent();
 
 //evenlistener for same as permanent address button//////////////////////////////////////////////////
 sameAsPermanentAddressButton.addEventListener("click", () => {
-  // Set current address fields to match permanent address
+  // Seting current address fields to match permanent address
   cProvince.value = pProvince.value;
   cMunicipality.value = pMunicipality.value;
   cWard.value = pWard.value;
 
-  // Get the selected district from the permanent address
+  // Geting the selected district from the permanent address
   const selectedDistrict = pDistrict.value;
 
   // Clear existing options in current district select element
   cDistrict.innerHTML = "";
 
-  // Get the districts for the selected province
+  // Geting the districts for the selected province
   const districts = districtOptions[pProvince.value] || [];
 
-  // Add new options to current district select element
+  // Adding new options to current district select element
   districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     option.value = district;
     cDistrict.appendChild(option);
   });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Find the option with the selected district and set it as selected
-  const selectedOption = cDistrict.querySelector(`option[value="${selectedDistrict}"]`);
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Finding the option with the selected district and set it as selected
+  const selectedOption = cDistrict.querySelector(
+    `option[value="${selectedDistrict}"]`
+  );
   if (selectedOption) {
     selectedOption.selected = true;
   }
@@ -271,6 +273,32 @@ submitButton.addEventListener("click", () => {
   } else if (!isValidEmail(email.value)) {
     validationMessages.push("Invalid Email address.");
   }
+
+  //permanent address municipality
+  if(pMunicipality.value===""){
+    validationMessages.push("Permanent Address Municipality is empty. ")
+  }else if(/\d/.test(pMunicipality.value) || /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pMunicipality.value)){
+    validationMessages.push("Permanent Address Municipality should be text Only.")
+  }
+  
+  //permanent address municipality
+  if(pWard.value===""){
+      validationMessages.push("Permanent Address Ward is empty.")
+    }
+
+//current address municipality
+if(cMunicipality.value===""){
+    validationMessages.push("Current Address Municipality is empty. ")
+  }else if(/\d/.test(cMunicipality.value) || /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(cMunicipality.value)){
+    validationMessages.push("Current Address Municipality should be text Only.")
+  }
+//current address ward
+if(cWard.value===""){
+    validationMessages.push("Current Address Ward is empty.")
+  }
+
+
+    console.log(validationMessages);
 
   console.log(userdata);
 });
