@@ -131,7 +131,7 @@ function UpdateDistrictOptionsForPermanent() {
   pDistrict.innerHTML = "";
 
   // add new options
-  districts.forEach((district) => {
+  districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     pDistrict.appendChild(option);
@@ -149,7 +149,7 @@ function UpdateDistrictOptionsForPCurrent() {
   cDistrict.innerHTML = "";
 
   // add new options
-  districts.forEach((district) => {
+  districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     cDistrict.appendChild(option);
@@ -178,7 +178,7 @@ sameAsPermanentAddressButton.addEventListener("click", () => {
   const districts = districtOptions[pProvince.value] || [];
 
   // Add new options to current district select element
-  districts.forEach((district) => {
+  districts.map((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     option.value = district;
