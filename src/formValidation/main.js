@@ -196,13 +196,13 @@ sameAsPermanentAddressButton.addEventListener("click", () => {
 
 // Function to validate Email address
 function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 // Function to validate phone number
 function isValidPhoneNumber(phoneNumber) {
   // Regular expression for phone number validation
-  const phoneRegex = /^\d{10}$/;
+  const phoneRegex = /^\d{6,14}$/;
   return phoneRegex.test(phoneNumber);
 }
 /**
@@ -213,31 +213,7 @@ function isValidPhoneNumber(phoneNumber) {
  *
  */
 submitButton.addEventListener("click", () => {
-  const userdata = {
-    user: {
-      first_name: `${firstName.value}`,
-      middle_name: `${middleName.value}`,
-      last_name: `${lastName.value}`,
-      user_gender: `${gender.value}`,
-      user_age: `${age.value}`,
-    },
-    userContactInfo: {
-      user_phoneNumberr: `${phone.value}`,
-      user_email: `${email.value}`,
-    },
-    permanentAddress: {
-      province: `${pProvince.value}`,
-      district: `${pDistrict.value}`,
-      municipality: `${pMunicipality.value}`,
-      ward: `${pWard.value}`,
-    },
-    currentAddress: {
-      province: `${cProvince.value}`,
-      district: `${cDistrict.value}`,
-      municipality: `${cMunicipality.value}`,
-      ward: `${cWard.value}`,
-    },
-  };
+ 
   //Validation
   alertBox.innerHTML = "";
 
@@ -256,7 +232,7 @@ submitButton.addEventListener("click", () => {
   //age
   if (age.value === "") {
     validationMessages.push("Age is empty.");
-  } else if (age.value >= 100 && age.value <= 0) {
+  } else if (age.value >= 100 || age.value <= 0) {
     validationMessages.push(`${age.value} is an invalid age.`);
   }
 
@@ -297,8 +273,44 @@ if(cWard.value===""){
     validationMessages.push("Current Address Ward is empty.")
   }
 
+// display validation messages
+if(validationMessages.length>0){
+    validationMessages.map(message =>{
+        const validationMsg = document.createElement("div");
+        validationMsg.textContent=message;
+        alertBox.appendChild(validationMsg);
+    });
+}
+else{
+    //runs after the all condition are meet
+    const userdata = {
+        user: {
+          first_name: `${firstName.value}`,
+          middle_name: `${middleName.value}`,
+          last_name: `${lastName.value}`,
+          user_gender: `${gender.value}`,
+          user_age: `${age.value}`,
+        },
+        userContactInfo: {
+          user_phoneNumberr: `${phone.value}`,
+          user_email: `${email.value}`,
+        },
+        permanentAddress: {
+          province: `${pProvince.value}`,
+          district: `${pDistrict.value}`,
+          municipality: `${pMunicipality.value}`,
+          ward: `${pWard.value}`,
+        },
+        currentAddress: {
+          province: `${cProvince.value}`,
+          district: `${cDistrict.value}`,
+          municipality: `${cMunicipality.value}`,
+          ward: `${cWard.value}`,
+        },
+      };
+      console.log(userdata);
 
-    console.log(validationMessages);
 
-  console.log(userdata);
+}
+
 });
