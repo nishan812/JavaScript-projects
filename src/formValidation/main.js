@@ -274,6 +274,8 @@ submitButton.addEventListener("click", (e) => {
   //permanent address municipality
   if (pWard.value === "") {
     validationMessages.push("Permanent Address Ward is empty.");
+  }else if(Number(pWard.value)<=0||Number(pWard.value)>=50){
+    validationMessages.push("Invalid Permanent Address Ward.")
   }
 
   //current address municipality
@@ -290,6 +292,8 @@ submitButton.addEventListener("click", (e) => {
   //current address ward
   if (cWard.value === "") {
     validationMessages.push("Current Address Ward is empty.");
+  }else if(Number(cWard.value)<=0||Number(cWard.value)>=50){
+    validationMessages.push("Invalid Current Address Ward.")
   }
 
   // display validation messages
