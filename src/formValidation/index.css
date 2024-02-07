@@ -149,8 +149,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-.provinceAndDistrictContainer input {
+select{
+  color: #ffffff;
+}
+.provinceAndDistrictContainer select {
   height: 50%;
+  width: 40%;
 }
 .provinceAndDistrictContainer {
   padding: 5%;
@@ -210,4 +214,9 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+.alertMsgSection{
+  padding-top: 1%;
+  color: red;
+
 }

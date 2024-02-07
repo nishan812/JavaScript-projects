@@ -12,8 +12,8 @@
       <div class="firstContainer">
         <div class="formHeading">Form</div>
         <div class="nameBox">
-          <label for="firstname" id="firstname">Firstname</label>
-          <input type="text" id="middlename" class="input" />
+          <label for="firstname">Firstname</label>
+          <input type="text" id="firstname" class="input" />
           <label for="middlename">Middlename</label>
           <input type="text" id="middlename" class="input" />
           <label for="lastname">Lastname</label>
@@ -50,10 +50,28 @@
         <div class="perAddContainer">
           <div class="addressHeading">Permanent Address</div>
           <div class="provinceAndDistrictContainer">
+
+
+            
             <label for="permanentProvince">Province</label>
-            <input type="number" class="input" id="permanentProvince" />
+            <select name="" id="permanentProvince" class="input">
+            <option value="koshi">Koshi</option>
+            <option value="madesh_pradesh">Madesh Pradesh</option>
+            <option value="bagmati">Bagmati</option>
+            <option value="gandaki">Gandaki</option>
+            <option value="lumbini">Lumbini</option>
+            <option value="karnali">Karnali</option>
+            <option value="sudurpashchim">Sudurpaschim</option>
+            </select>
+            
+            <!-- <input type="number" class="input" id="permanentProvince" /> -->
+
+
+
+
             <label for="permanentDistrict">District</label>
-            <input type="text" class="input" id="permanentDistrict" />
+            <select name="" id="permanentDistrict" class="districtOptions input" ></select>
+            <!-- <input type="text" class="input" id="permanentDistrict" /> -->
           </div>
           <div class="muniAndWardContainer">
             <label for="permanentMunicipality">Municipality</label>
@@ -72,7 +90,7 @@
           </div>
 
           <div class="currprovinceAndDistrictContainer">
-            <label for="currentProvince>Province</label>
+            <label for="currentProvince">Province</label>
             <input type="number" class="input" id="currentProvince" />
             <label for="currentDistrict">District</label>
             <input type="text" class="input" id="currentDistrict" />
@@ -85,6 +103,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="alertMsgSection">
+      
     </div>
     <div class="submitButtonContainer">
       <button id="submit">
