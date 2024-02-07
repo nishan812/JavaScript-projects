@@ -11,6 +11,7 @@ body{
     align-items: center;
 }
 header{
+    display: none;
     width: 100%;
     position: sticky;
     top: 0;
@@ -58,6 +59,7 @@ header{
 
 /* Main body styling */
 .mainContainer{
+    display: none;
     margin-top: 2.5%;
     margin-bottom: 5%;
     border-top-right-radius: 10%;
