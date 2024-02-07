@@ -84,16 +84,6 @@
    }
 
 
-
-
-
-
-
-
-
-
-
-
 /* button for submit */
 
 .submitButtonContainer{
@@ -102,7 +92,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .submitButtonContainer button {

@@ -4,7 +4,7 @@
   border: border-box;
 }
 input {
-  color: white;
+  color: #ffffff;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   border-top-left-radius: 5%;
   border-bottom-right-radius: 10%;
   background-color: #212121;
-  color: white;
+  color: #ffffff;
   margin-top: 100px;
   height: 1200px;
   width: 400px;
@@ -37,7 +37,7 @@ body {
   width: 100%;
 }
 .formHeading {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #000000;
   font-size: 20px;
   font-weight: bold;
   height: 10%;
@@ -73,7 +73,7 @@ body {
 .genderAndAgeContainer select {
   height: 50%;
   width: 41.5%;
-  color: white;
+  color: #ffffff;
 }
 .genderAndAgeContainer input {
   height: 50%;
@@ -132,7 +132,7 @@ body {
   align-items: flex-start;
 }
 .thirdContainer {
-  border-top: 2px solid black;
+  border-top: 2px solid #000000;
   height: 48%;
   width: 100%;
 }
@@ -140,7 +140,7 @@ body {
   height: 45%;
 }
 .addressHeading {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #000000;
   font-style: italic;
   font-weight: bold;
   font-size: 1.1em;
@@ -184,8 +184,8 @@ select{
 .curraddressHeading {
   margin-top: 5%;
   margin-bottom: 2%;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
   font-style: italic;
   font-weight: bold;
   font-size: 1.1em;
@@ -218,7 +218,7 @@ select{
 }
 .alertMsgSection{
   padding-top: 1%;
-  color: red;
+  color: #ff0000;
 
 }
 .userCardContainer{
