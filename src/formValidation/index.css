@@ -222,11 +222,15 @@ select{
 
 }
 .userCardContainer{
-  background-color: red;
+border-radius: 5%;
+  padding-left: 5%;
+  margin-bottom: 10%;
+  background-color: #B4D4FF;
   height: 400px;
-  width: 400px;
-
-}
-.userCard{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 
 }
