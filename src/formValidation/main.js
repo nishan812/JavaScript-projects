@@ -131,7 +131,7 @@ function UpdateDistrictOptionsForPermanent() {
   pDistrict.innerHTML = "";
 
   // adding new options
-  districts.map((district) => {
+  districts.forEach((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     pDistrict.appendChild(option);
@@ -149,7 +149,7 @@ function UpdateDistrictOptionsForPCurrent() {
   cDistrict.innerHTML = "";
 
   // adding new options
-  districts.map((district) => {
+  districts.forEach((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     cDistrict.appendChild(option);
@@ -178,7 +178,7 @@ sameAsPermanentAddressButton.addEventListener("click", () => {
   const districts = districtOptions[pProvince.value] || [];
 
   // Adding new options to current district select element
-  districts.map((district) => {
+  districts.forEach((district) => {
     const option = document.createElement("option");
     option.textContent = district;
     option.value = district;
@@ -196,7 +196,7 @@ sameAsPermanentAddressButton.addEventListener("click", () => {
 
 // Function to validate Email address
 function isValidEmail(email) {
-  const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]+(?:\.[^\s@]+)?$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+(?:\.[^\s@]+)?$/;
   return emailRegex.test(email);
 }
 // Function to validate phone number
@@ -213,7 +213,6 @@ function isValidPhoneNumber(phoneNumber) {
  *
  */
 submitButton.addEventListener("click", (e) => {
- 
   //Validation
   alertBox.innerHTML = "";
 
@@ -251,87 +250,92 @@ submitButton.addEventListener("click", (e) => {
   }
 
   //permanent address municipality
-  if(pMunicipality.value===""){
-    validationMessages.push("Permanent Address Municipality is empty. ")
-  }else if(/\d/.test(pMunicipality.value) || /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pMunicipality.value)){
-    validationMessages.push("Permanent Address Municipality should be text Only.")
+  if (pMunicipality.value === "") {
+    validationMessages.push("Permanent Address Municipality is empty. ");
+  } else if (
+    /\d/.test(pMunicipality.value) ||
+    /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pMunicipality.value)
+  ) {
+    validationMessages.push(
+      "Permanent Address Municipality should be text Only."
+    );
   }
-  
+
   //permanent address municipality
-  if(pWard.value===""){
-      validationMessages.push("Permanent Address Ward is empty.")
-    }
-
-//current address municipality
-if(cMunicipality.value===""){
-    validationMessages.push("Current Address Municipality is empty. ")
-  }else if(/\d/.test(cMunicipality.value) || /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(cMunicipality.value)){
-    validationMessages.push("Current Address Municipality should be text Only.")
-  }
-//current address ward
-if(cWard.value===""){
-    validationMessages.push("Current Address Ward is empty.")
+  if (pWard.value === "") {
+    validationMessages.push("Permanent Address Ward is empty.");
   }
 
-// display validation messages
-if(validationMessages.length>0){
-    validationMessages.map(message =>{
-        const validationMsg = document.createElement("div");
-        validationMsg.textContent=message;
-        alertBox.appendChild(validationMsg);
+  //current address municipality
+  if (cMunicipality.value === "") {
+    validationMessages.push("Current Address Municipality is empty. ");
+  } else if (
+    /\d/.test(cMunicipality.value) ||
+    /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(cMunicipality.value)
+  ) {
+    validationMessages.push(
+      "Current Address Municipality should be text Only."
+    );
+  }
+  //current address ward
+  if (cWard.value === "") {
+    validationMessages.push("Current Address Ward is empty.");
+  }
+
+  // display validation messages
+  if (validationMessages.length > 0) {
+    validationMessages.forEach((message) => {
+      const validationMsg = document.createElement("div");
+      validationMsg.textContent = message;
+      alertBox.appendChild(validationMsg);
     });
-}
-else{
+  } else {
     //runs after the all condition are meet
     const userdata = {
-        user: {
-          first_name: `${firstName.value}`,
-          middle_name: `${middleName.value}`,
-          last_name: `${lastName.value}`,
-          user_gender: `${gender.value}`,
-          user_age: `${age.value}`,
-          isAdult :function(){
-            return parseInt(this.user_age) >= 18;
-          }()
-        },
-        userContactInfo: {
-          user_phoneNumberr: `${phone.value}`,
-          user_email: `${email.value}`,
-        },
-        permanentAddress: {
-          province: `${pProvince.value}`,
-          district: `${pDistrict.value}`,
-          municipality: `${pMunicipality.value}`,
-          ward: `${pWard.value}`,
-        },
-        currentAddress: {
-          province: `${cProvince.value}`,
-          district: `${cDistrict.value}`,
-          municipality: `${cMunicipality.value}`,
-          ward: `${cWard.value}`,
-        },
-      };
-      console.log(userdata);
-      
-        // Clear all form fields
-  firstName.value = "";
-  middleName.value = "";
-  lastName.value = "";
-  gender.value = "";
-  age.value = "";
-  phone.value = "";
-  email.value = "";
-  pProvince.value = "";
-  pDistrict.value = "";
-  pMunicipality.value = "";
-  pWard.value = "";
-  cProvince.value = "";
-  cDistrict.value = "";
-  cMunicipality.value = "";
-  cWard.value = "";
+      user: {
+        first_name: `${firstName.value}`,
+        middle_name: `${middleName.value}`,
+        last_name: `${lastName.value}`,
+        user_gender: `${gender.value}`,
+        user_age: `${age.value}`,
+        isAdult: (function () {
+          return parseInt(this.user_age) >= 18;
+        })(),
+      },
+      userContactInfo: {
+        user_phoneNumberr: `${phone.value}`,
+        user_email: `${email.value}`,
+      },
+      permanentAddress: {
+        province: `${pProvince.value}`,
+        district: `${pDistrict.value}`,
+        municipality: `${pMunicipality.value}`,
+        ward: `${pWard.value}`,
+      },
+      currentAddress: {
+        province: `${cProvince.value}`,
+        district: `${cDistrict.value}`,
+        municipality: `${cMunicipality.value}`,
+        ward: `${cWard.value}`,
+      },
+    };
 
- 
-
-}
-
+    // Clear all form fields
+    firstName.value = "";
+    middleName.value = "";
+    lastName.value = "";
+    gender.value = "";
+    age.value = "";
+    phone.value = "";
+    email.value = "";
+    pProvince.value = "koshi";
+    pDistrict.value = "Bhojpur";
+    pMunicipality.value = "";
+    pWard.value = "";
+    cProvince.value = "koshi";
+    cDistrict.value = "Bhojpur";
+    cMunicipality.value = "";
+    cWard.value = "";
+    console.log(userdata);
+  }
 });
