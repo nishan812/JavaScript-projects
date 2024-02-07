@@ -194,8 +194,9 @@ select{
   justify-content: center;
   align-items: center;
 }
-.currprovinceAndDistrictContainer input {
+.currprovinceAndDistrictContainer select {
   height: 50%;
+  width: 40%;
 }
 .currprovinceAndDistrictContainer {
   height: 45%;
