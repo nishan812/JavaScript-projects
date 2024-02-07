@@ -196,7 +196,7 @@ sameAsPermanentAddressButton.addEventListener("click", () => {
 
 // Function to validate Email address
 function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\.[^\s@]+$/;
+  const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]+(?:\.[^\s@]+)?$/;
   return emailRegex.test(email);
 }
 // Function to validate phone number
