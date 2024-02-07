@@ -338,6 +338,10 @@ submitButton.addEventListener("click", (e) => {
     submittedMessage.textContent="Form Submitted Sucessfully, Thankyou.";
     body.insertBefore(submittedMessage,userCardBody)
 
+    setTimeout(() => {
+        submittedMessage.remove()
+    }, 2500);
+
     //for first name
     const usercard_firstName =document.createElement("span");
     usercard_firstName.innerHTML=`<p>Firstname: ${userdata.user.first_name}</p>`
