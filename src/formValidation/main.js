@@ -332,7 +332,12 @@ submitButton.addEventListener("click", (e) => {
       },
     };
 
-    //creating card after submiting
+    //creating card and subbmited message after submiting
+    const submittedMessage = document.createElement("div");
+    submittedMessage.classList.add("submittedMessage");
+    submittedMessage.textContent="Form Submitted Sucessfully, Thankyou.";
+    body.insertBefore(submittedMessage,userCardBody)
+
     //for first name
     const usercard_firstName =document.createElement("span");
     usercard_firstName.innerHTML=`<p>Firstname: ${userdata.user.first_name}</p>`
@@ -420,11 +425,6 @@ submitButton.addEventListener("click", (e) => {
     const usercard_pWard = document.createElement("span");
     usercard_pWard.innerHTML=`<p>Ward: ${userdata.permanentAddress.ward}</p>`
     userCardBody.appendChild(usercard_pWard)
-
-
-
-    
-
 
     // Clear all form fields
     firstName.value = "";

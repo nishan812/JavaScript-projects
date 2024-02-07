@@ -233,3 +233,16 @@ select {
   align-items: flex-start;
   justify-content: space-evenly;
 }
+.submittedMessage{
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 5px double red;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 10%;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
