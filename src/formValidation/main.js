@@ -1,8 +1,9 @@
 const userCardBody = document.querySelector(".userCardContainer");
-userCardBody.style.display="none"
+userCardBody.setAttribute("id","userCardBody")
+userCardBody.style.display = "none";
 
 const body = document.querySelector("body");
-const contBody =document.querySelector(".containerMain")
+const contBody = document.querySelector(".containerMain");
 const alertBox = document.querySelector(".alertMsgSection");
 const firstName = document.querySelector("#firstname");
 const middleName = document.querySelector("#middlename");
@@ -30,11 +31,10 @@ const sameAsPermanentAddressButton = document.querySelector(
 );
 const submitButton = document.querySelector("#submit");
 
-
 //function that capitalizes the first letter
 
-function capitalize(str){
-    return str.charAt(0).toUpperCase() + str.slice(1);
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 /**
  * Here i have done dynamic district will update as the province changes
@@ -274,8 +274,8 @@ submitButton.addEventListener("click", (e) => {
   //permanent address municipality
   if (pWard.value === "") {
     validationMessages.push("Permanent Address Ward is empty.");
-  }else if(Number(pWard.value)<=0||Number(pWard.value)>=50){
-    validationMessages.push("Invalid Permanent Address Ward.")
+  } else if (Number(pWard.value) <= 0 || Number(pWard.value) >= 50) {
+    validationMessages.push("Invalid Permanent Address Ward.");
   }
 
   //current address municipality
@@ -292,8 +292,8 @@ submitButton.addEventListener("click", (e) => {
   //current address ward
   if (cWard.value === "") {
     validationMessages.push("Current Address Ward is empty.");
-  }else if(Number(cWard.value)<=0||Number(cWard.value)>=50){
-    validationMessages.push("Invalid Current Address Ward.")
+  } else if (Number(cWard.value) <= 0 || Number(cWard.value) >= 50) {
+    validationMessages.push("Invalid Current Address Ward.");
   }
 
   // display validation messages
@@ -312,15 +312,14 @@ submitButton.addEventListener("click", (e) => {
         last_name: capitalize(lastName.value),
         user_gender: gender.value,
         user_age: age.value,
-        isAdult:function(age){
-            if(age<18) return false
-            else return true
-        }(age.value)
-        
+        isAdult: (function (age) {
+          if (age < 18) return false;
+          else return true;
+        })(age.value),
       },
       userContactInfo: {
         user_phoneNumber: phone.value,
-        user_email: email.value,
+        user_email: email.value.toLowerCase(),
       },
       permanentAddress: {
         province: pProvince.value,
@@ -339,100 +338,102 @@ submitButton.addEventListener("click", (e) => {
     //creating card and subbmited message after submiting
     const submittedMessage = document.createElement("div");
     submittedMessage.classList.add("submittedMessage");
-    submittedMessage.textContent="Form Submitted Sucessfully, Thankyou.";
-    body.insertBefore(submittedMessage,userCardBody)
+    submittedMessage.textContent = "Form Submitted Sucessfully, Thankyou.";
+    body.insertBefore(submittedMessage, userCardBody);
 
     setTimeout(() => {
-        submittedMessage.remove()
+      submittedMessage.remove();
     }, 2500);
 
     //for first name
-    const usercard_firstName =document.createElement("span");
-    usercard_firstName.innerHTML=`<p>Firstname: ${userdata.user.first_name}</p>`
-    userCardBody.appendChild(usercard_firstName)
-    
+    const usercard_firstName = document.createElement("span");
+    usercard_firstName.innerHTML = `<p>Firstname: ${userdata.user.first_name}</p>`;
+    userCardBody.appendChild(usercard_firstName);
+
     //for Middlename
-    const usercard_middleName =document.createElement("span");
-    usercard_middleName.innerHTML=`<p>Middlename: ${userdata.user.middle_name}</p>`
+    const usercard_middleName = document.createElement("span");
+    usercard_middleName.innerHTML = `<p>Middlename: ${userdata.user.middle_name}</p>`;
     userCardBody.appendChild(usercard_middleName);
 
     //for lastname
-    const usercard_lastName =document.createElement("span");
-    usercard_lastName.innerHTML=`<p>Lastname: ${userdata.user.last_name}</p>`
+    const usercard_lastName = document.createElement("span");
+    usercard_lastName.innerHTML = `<p>Lastname: ${userdata.user.last_name}</p>`;
     userCardBody.appendChild(usercard_lastName);
 
     //for gender
-    const usercard_gender =document.createElement("span");
-    usercard_gender.innerHTML=`<p>Gender: ${userdata.user.user_gender}</p>`
+    const usercard_gender = document.createElement("span");
+    usercard_gender.innerHTML = `<p>Gender: ${userdata.user.user_gender}</p>`;
     userCardBody.appendChild(usercard_gender);
 
     //for age
-    const usercard_age =document.createElement("span");
-    usercard_age.innerHTML=`<p>Age: ${userdata.user.user_age}</p>`
+    const usercard_age = document.createElement("span");
+    usercard_age.innerHTML = `<p>Age: ${userdata.user.user_age}</p>`;
     userCardBody.appendChild(usercard_age);
 
     //for phonenumber
-    const usercard_phone =document.createElement("span");
-    usercard_phone.innerHTML=`<p>Phone: ${userdata.userContactInfo.user_phoneNumber}</p>`
+    const usercard_phone = document.createElement("span");
+    usercard_phone.innerHTML = `<p>Phone: ${userdata.userContactInfo.user_phoneNumber}</p>`;
     userCardBody.appendChild(usercard_phone);
 
     // for email
-    const usercard_email =document.createElement("span");
-    usercard_email.innerHTML=`<p>Email: ${userdata.userContactInfo.user_email}</p>`
+    const usercard_email = document.createElement("span");
+    usercard_email.innerHTML = `<p>Email: ${userdata.userContactInfo.user_email}</p>`;
     userCardBody.appendChild(usercard_email);
 
-    //for current address heading 
+    //for current address heading
     const usercard_currentAddHeading = document.createElement("span");
-    usercard_currentAddHeading.innerHTML="<p>Current Address:</p>";
-    usercard_currentAddHeading.style.fontSize="1.1em"
-    usercard_currentAddHeading.style.fontWeight="bold"
-    usercard_currentAddHeading.style.fontFamily="italic"
+    usercard_currentAddHeading.innerHTML = "<p>Current Address:</p>";
+    usercard_currentAddHeading.style.fontSize = "1.1em";
+    usercard_currentAddHeading.style.fontWeight = "bold";
+    usercard_currentAddHeading.style.fontFamily = "italic";
 
-    userCardBody.appendChild(usercard_currentAddHeading)
+    userCardBody.appendChild(usercard_currentAddHeading);
 
     //current address
-    const usercard_cProvince=document.createElement("span");
-    usercard_cProvince.innerHTML=`<p>Province: ${userdata.currentAddress.province}</p>`
-    userCardBody.appendChild(usercard_cProvince)
+    const usercard_cProvince = document.createElement("span");
+    usercard_cProvince.innerHTML = `<p>Province: ${capitalize(userdata.currentAddress.province)}</p>`;
+    userCardBody.appendChild(usercard_cProvince);
 
     const usercard_cDistrict = document.createElement("span");
-    usercard_cDistrict.innerHTML=`<p>District: ${userdata.currentAddress.district}</p>`
-    userCardBody.appendChild(usercard_cDistrict)
+    usercard_cDistrict.innerHTML = `<p>District: ${capitalize(userdata.currentAddress.district)}</p>`;
+    userCardBody.appendChild(usercard_cDistrict);
 
     const usercard_cMuni = document.createElement("span");
-    usercard_cMuni.innerHTML=`<p>Municipality: ${userdata.currentAddress.municipality}</p>`
-    userCardBody.appendChild(usercard_cMuni);   
+    usercard_cMuni.innerHTML = `<p>Municipality: ${capitalize(userdata.currentAddress.municipality)}</p>`;
+    userCardBody.appendChild(usercard_cMuni);
 
     const usercard_cWard = document.createElement("span");
-    usercard_cWard.innerHTML=`<p>Ward: ${userdata.currentAddress.ward}</p>`
-    userCardBody.appendChild(usercard_cWard)
+    usercard_cWard.innerHTML = `<p>Ward: ${userdata.currentAddress.ward}</p>`;
+    userCardBody.appendChild(usercard_cWard);
 
-
-    //for current address heading 
+    //for current address heading
     const usercard_permanentAddHeading = document.createElement("span");
-    usercard_permanentAddHeading.innerHTML="<p>Permanent Address:</p>";
-    usercard_permanentAddHeading.style.fontSize="1.1em"
-    usercard_permanentAddHeading.style.fontWeight="bold"
-    usercard_permanentAddHeading.style.fontFamily="italic"
+    usercard_permanentAddHeading.innerHTML = "<p>Permanent Address:</p>";
+    usercard_permanentAddHeading.style.fontSize = "1.1em";
+    usercard_permanentAddHeading.style.fontWeight = "bold";
+    usercard_permanentAddHeading.style.fontFamily = "italic";
 
-    userCardBody.appendChild(usercard_permanentAddHeading)
+    userCardBody.appendChild(usercard_permanentAddHeading);
 
     //for permanent address in card
-    const usercard_pProvince=document.createElement("span");
-    usercard_pProvince.innerHTML=`<p>Province: ${userdata.permanentAddress.province}</p>`
-    userCardBody.appendChild(usercard_pProvince)
+    const usercard_pProvince = document.createElement("span");
+    usercard_pProvince.innerHTML = `<p>Province: ${capitalize(userdata.permanentAddress.province)}</p>`;
+    userCardBody.appendChild(usercard_pProvince);
 
     const usercard_pDistrict = document.createElement("span");
-    usercard_pDistrict.innerHTML=`<p>District: ${userdata.permanentAddress.district}</p>`
-    userCardBody.appendChild(usercard_pDistrict)
+    usercard_pDistrict.innerHTML = `<p>District: ${userdata.permanentAddress.district}</p>`;
+    userCardBody.appendChild(usercard_pDistrict);
 
     const usercard_pMuni = document.createElement("span");
-    usercard_pMuni.innerHTML=`<p>Municipality: ${userdata.permanentAddress.municipality}</p>`
-    userCardBody.appendChild(usercard_pMuni);   
+    usercard_pMuni.innerHTML = `<p>Municipality: ${capitalize(userdata.permanentAddress.municipality)}</p>`;
+    userCardBody.appendChild(usercard_pMuni);
 
     const usercard_pWard = document.createElement("span");
-    usercard_pWard.innerHTML=`<p>Ward: ${userdata.permanentAddress.ward}</p>`
-    userCardBody.appendChild(usercard_pWard)
+    usercard_pWard.innerHTML = `<p>Ward: ${userdata.permanentAddress.ward}</p>`;
+    userCardBody.appendChild(usercard_pWard);
+
+
+
 
     // Clear all form fields
     firstName.value = "";
@@ -450,13 +451,14 @@ submitButton.addEventListener("click", (e) => {
     cDistrict.value = "Bhojpur";
     cMunicipality.value = "";
     cWard.value = "";
-    userCardBody.style.display="block"
+    userCardBody.style.display = "block";
     console.log(userdata);
-    alertBox.remove()
-    submitButton.remove()
-    contBody.remove()
+    alertBox.remove();
+    submitButton.remove();
+    contBody.remove();
+
+
+
+
   }
-
-
-
 });
