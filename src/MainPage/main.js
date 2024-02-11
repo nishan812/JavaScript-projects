@@ -1,9 +1,5 @@
-const normalBody = document.querySelector(".normalList");
+const container = document.querySelector(".container")
 
-//heading for normal projects
-const normalListHeading = document.createElement("h2");
-normalListHeading.innerHTML = "Normal Projects";
-normalBody.appendChild(normalListHeading);
 
 // Button to redirect to BMI calculator
 const bmiRedirect = document.createElement("li");
@@ -24,7 +20,7 @@ const countdownTimerRedirect = document.createElement("li");
 const countdownAnchor = document.createElement("a");
 countdownTimerRedirect.appendChild(countdownAnchor);
 countdownAnchor.innerHTML = "Countdown Timer";
-countdownAnchor.setAttribute("href", "#");
+countdownAnchor.setAttribute("href", "/src/counter/index.html");
 
 // Button to redirect to Todo App
 const todoRedirect = document.createElement("li");
@@ -54,19 +50,11 @@ PMG.appendChild(PMGAnchor);
 PMGAnchor.innerHTML = "Popup Message Generation";
 PMGAnchor.setAttribute("href", "#");
 
-/*
- 
-From here second box is started Projects that uses API
- 
- */
+
 
 //gettinig root for box of list that contains projects that uses api list
 const apiProjectsBody = document.querySelector(".apiProjectsList");
 
-// Heading for Projects that use Api
-const APIprojectHeading = document.createElement("h2");
-APIprojectHeading.innerHTML = "Projects that use API";
-apiProjectsBody.appendChild(APIprojectHeading);
 
 // Button that redirects to Quote Generator
 const quoteGeneratorRedirect = document.createElement("li");
@@ -89,21 +77,7 @@ mrsRedirect.appendChild(mrsAnchor);
 mrsAnchor.innerHTML = "Movie Recommendation System";
 mrsAnchor.setAttribute("href", "#");
 
-/*
- 
-From here third box is started Intermediate Level projects
- 
-*/
 
-//gettinig root for box of list that contains intermediate level projects list
-const intermdiateProjectsBody = document.querySelector(".intermediateList");
-
-
-// Heading for intermediate level projects
-
-const intermediateHeading = document.createElement("h2");
-intermediateHeading.innerHTML="Intermediate Projects"
-intermdiateProjectsBody.appendChild(intermediateHeading)
 
 // Button for redirect to chat application
 const chatAppRedirect = document.createElement("li");
@@ -134,29 +108,20 @@ smowAnchor.setAttribute("href","#");
 smowAnchor.innerHTML="Send a Message to a User on Whatsapp"
 
 
+const items = [bmiRedirect,formValidationRedirect,countdownTimerRedirect,todoRedirect,hcpRedirect,digitalClockRedirect,PMG,
+  quoteGeneratorRedirect,githubProfileViewerRedirect,mrsRedirect,chatAppRedirect,smowRedirect,wssRedirect,dictAppRedirect]
 
 
 
-const normalProjectsListSorting = [
-  [normalBody.appendChild(bmiRedirect)],
-  [normalBody.appendChild(formValidationRedirect)],
-  [normalBody.appendChild(countdownTimerRedirect)],
-  [normalBody.appendChild(todoRedirect)],
-  [normalBody.appendChild(hcpRedirect)],
-  [normalBody.appendChild(digitalClockRedirect)],
-  [normalBody.appendChild(PMG)],
-];
+items.forEach((item)=>{
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card")
 
-const apiProjectsListSorting = [
-  [apiProjectsBody.appendChild(quoteGeneratorRedirect)],
-  [apiProjectsBody.appendChild(githubProfileViewerRedirect)],
-  [apiProjectsBody.appendChild(mrsRedirect)]
-];
+  cardBody.appendChild(item)
+  container.appendChild(cardBody)
+  
 
-const intermediateProjectsListSorting = [
-    [intermdiateProjectsBody.appendChild(chatAppRedirect)],
-    [intermdiateProjectsBody.appendChild(smowRedirect)],
-    [intermdiateProjectsBody.appendChild(wssRedirect)],
-    [intermdiateProjectsBody.appendChild(dictAppRedirect)],
 
-]
+})
+
+
