@@ -6,6 +6,15 @@
 li {
   list-style: none;
 }
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+a:hover{
+    
+    color: #c3b9b9;
+}
 
 body {
   background-color: white;
@@ -19,11 +28,13 @@ body {
 }
 
 .card {
+    text-align: center;
   display: flex;
   flex-direction: column;
-  width: 230px;
-  height: 280px;
-  max-height: 330px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 250px;
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.08),
@@ -36,14 +47,17 @@ body {
 }
 
 .card:hover {
+    text-decoration:underline;
+    font-size: 20px;
   transform: translateY(-10px);
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1),
     -4px -4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* @media only screen and (max-width: 600px) {
-    .mainContainer{
-        width: 400px;
-    }
+@media only screen and (max-width: 600px) {
+   .card{
+    height: 200px;
+    width: 200px;
+   }
    
-  } */
+  }
