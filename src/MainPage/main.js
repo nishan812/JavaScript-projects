@@ -15,12 +15,7 @@ formValidationRedirect.appendChild(formValidationAnchor);
 formValidationAnchor.innerHTML = "Form";
 formValidationAnchor.setAttribute("href", "/src/formValidation/index.html");
 
-// Button to redirect to Countdown Timer
-const countdownTimerRedirect = document.createElement("li");
-const countdownAnchor = document.createElement("a");
-countdownTimerRedirect.appendChild(countdownAnchor);
-countdownAnchor.innerHTML = "Countdown Timer";
-countdownAnchor.setAttribute("href", "/src/counter/index.html");
+
 
 // Button to redirect to Todo App
 const todoRedirect = document.createElement("li");
@@ -79,12 +74,6 @@ mrsAnchor.setAttribute("href", "#");
 
 
 
-// Button for redirect to chat application
-const chatAppRedirect = document.createElement("li");
-const chatAppAnchor = document.createElement("a");
-chatAppRedirect.appendChild(chatAppAnchor)
-chatAppAnchor.setAttribute("href","#");
-chatAppAnchor.innerHTML="Chat Application"
 
 // Button to redirect to Wikipedia Search System
 const wssRedirect = document.createElement("li");
@@ -108,19 +97,78 @@ smowAnchor.setAttribute("href","#");
 smowAnchor.innerHTML="Send a Message to a User on Whatsapp"
 
 
-const items = [bmiRedirect,formValidationRedirect,countdownTimerRedirect,todoRedirect,hcpRedirect,digitalClockRedirect,PMG,
-  quoteGeneratorRedirect,githubProfileViewerRedirect,mrsRedirect,chatAppRedirect,smowRedirect,wssRedirect,dictAppRedirect]
+const items = [{
+  link:bmiRedirect,
+  discription:"Calculate your Body mass index"
+},
+{
+link:formValidationRedirect,
+discription:"A simple form with validation."
+},
+{
+  link:todoRedirect ,
+  discription:" To Do list to manage your tasks. "
+},
+{
+  link:hcpRedirect,
+  discription:"Change backgroud according way you like. "
+},
+{
+  link:digitalClockRedirect ,
+  discription:"A simple digital clock."
+},
+{
+  link:PMG ,
+  discription:"A popup message generator, Generates message after you click."
+}
+,
+{
+  link:quoteGeneratorRedirect ,
+  discription:"A simple quote generator "
+},
+{
+  link:githubProfileViewerRedirect ,
+  discription:"Search any users on github and view their profile easly."
+},
+{
+  link:mrsRedirect,
+  discription:"A system that suggests you movie that you like. "
+},
+{
+  link:smowRedirect ,
+  discription:"Send message to user you like on whatsapp."
+},
+{
+  link:wssRedirect ,
+  discription:"Search on wikipedia made easy."
+},
+{
+  link:dictAppRedirect ,
+  discription:"A dictionary app for your english betterment."
+}
+]
 
 
 
 items.forEach((item)=>{
   const cardBody = document.createElement("div");
   cardBody.classList.add("card")
+  const description = document.createElement("p");
+  description.classList.add("description")
+  description.textContent=item.discription
+  description.style.display="none"
 
-  cardBody.appendChild(item)
+  cardBody.appendChild(item.link)
+  cardBody.appendChild(description)
   container.appendChild(cardBody)
-  
 
+  cardBody.addEventListener("mouseover",()=>{
+    description.style.display="block"
+  })
+  cardBody.addEventListener("mouseout",()=>{
+    description.style.display="none"
+  })
+  
 
 })
 
