@@ -164,9 +164,11 @@ items.forEach((item)=>{
 
   cardBody.addEventListener("mouseover",()=>{
     description.style.display="block"
+    description.style.fontSize="16px"
   })
   cardBody.addEventListener("mouseout",()=>{
     description.style.display="none"
+    description.style.fontSize="10px"
   })
   
 
