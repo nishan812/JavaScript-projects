@@ -170,6 +170,12 @@ items.forEach((item)=>{
     description.style.display="none"
     description.style.fontSize="10px"
   })
+
+  cardBody.addEventListener("click",(e)=>{
+    const target = e.currentTarget
+    const linkHref = target.querySelector("a").getAttribute("href");
+    window.location.href = linkHref;
+  })
   
 
 })
