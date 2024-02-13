@@ -22,7 +22,7 @@ const todoRedirect = document.createElement("li");
 const todoAnchor = document.createElement("a");
 todoRedirect.appendChild(todoAnchor);
 todoAnchor.innerHTML = "Todo List App";
-todoAnchor.setAttribute("href", "#");
+todoAnchor.setAttribute("href", "/src/todoList/index.html");
 
 // Button to redirect to  background color picker
 const hcpRedirect = document.createElement("li");
