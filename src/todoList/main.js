@@ -29,16 +29,18 @@ const tasks = [];
 // A function that style padding for listed item, if called fixes the padding according to the condition.
 function stylePadding() {
   // Conditon for styling : if array is empty no padding
-  if (!tasks) {
+  if (!listItemsBody.hasChildNodes()) {
     listItemsBody.style.padding = "0";
   } else {
     listItemsBody.style.padding = "2%";
   }
 }
 
-if (!input) {
-  // Event after clicking on Add Task Button
-  addTaskButton.addEventListener("click", () => {
+// Event after clicking on Add Task Button
+addTaskButton.addEventListener("click", () => {
+  if (input.value == "") {
+    return;
+  } else {
     stylePadding();
 
     // Clearing the items listed first.
@@ -67,8 +69,10 @@ if (!input) {
 
     // Clearing textbox After adding tasks
     input.value = "";
-  });
-}
+
+    stylePadding();
+  }
+});
 
 //Event for deleting the task items
 root.addEventListener("click", (e) => {
@@ -77,14 +81,16 @@ root.addEventListener("click", (e) => {
     const listItem = target.parentNode; // getting current list item
     const itemText = listItem.firstChild.textContent;
     listItem.remove();
-    console.log(`Before :${tasks}`);
-    console.log(itemText);
+
+    //test: console.log(`Before :${tasks}`);
+    //test: console.log(itemText);
 
     // Removing item from array
     const itemToRemove = tasks.findIndex((task) => task === itemText);
     if (itemToRemove !== -1) {
       tasks.splice(itemToRemove, 1);
-      console.log(`After: ${tasks}`);
+      // test:  console.log(`After: ${tasks}`);
     }
+    stylePadding();
   }
 });
