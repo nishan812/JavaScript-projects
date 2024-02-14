@@ -27,9 +27,17 @@ root.appendChild(listItemsBody)
 // Creating array for storing tasks list all items
 const tasks =[]
 
+
 // Event after clicking on Add Task Button
 addTaskButton.addEventListener("click",()=>{
 
+// Conditon for styling : if array is empty no padding 
+if(!tasks){
+    listItemsBody.style.padding="0"
+}else{
+    listItemsBody.style.padding="2%"
+}
+console.log(!tasks);
 
 // Clearing the items listed first.
 listItemsBody.innerHTML=""
