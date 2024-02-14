@@ -20,6 +20,7 @@ inputBody.appendChild(addTaskButton)
 
 // Creating body for tasks list items 
 const listItemsBody = document.createElement("div");
+listItemsBody.classList.add("listItemBody")
 root.appendChild(listItemsBody)
 
 
@@ -28,6 +29,7 @@ const tasks =[]
 
 // Event after clicking on Add Task Button
 addTaskButton.addEventListener("click",()=>{
+
 
 // Clearing the items listed first.
 listItemsBody.innerHTML=""
@@ -40,10 +42,15 @@ tasks.push(userInput.value)
 // Showing tasks added by user
 tasks.forEach((task)=>{
     const userTasks = document.createElement("li");
+    userTasks.classList.add("taskItem")
     userTasks.textContent=task
     listItemsBody.appendChild(userTasks)
 })
 
+
+
+// Clearing textbox After adding tasks
+input.value=""
 }) 
 
 
