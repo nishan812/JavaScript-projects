@@ -1,3 +1,6 @@
+// Getting body
+const body = document.querySelector("body");
+
 // Getting the root element as root.
 const root = document.querySelector(".root");
 
@@ -36,10 +39,31 @@ function stylePadding() {
   }
 }
 
+// A function that displays alert message
+function alertMessage(message) {
+  root.style.marginTop = "5%";
+  const messageBody = document.createElement("div");
+  messageBody.classList.add("alertBody");
+  body.insertBefore(messageBody, root);
+
+  setTimeout(() => {
+    messageBody.remove();
+    root.style.marginTop = "20%";
+  }, 3000);
+  messageBody.innerHTML = message;
+}
+
+// Function that checks whether the added task already exists or not
+function checkIfTaskAlreadyAdded(userInput) {
+  return tasks.some((task) => task.toLowerCase() === userInput.toLowerCase());
+}
+
 // Event after clicking on Add Task Button
 addTaskButton.addEventListener("click", () => {
   if (input.value == "") {
-    return;
+    alertMessage("Task is empty, Cannot be added.");
+  } else if (checkIfTaskAlreadyAdded(input.value)) {
+    alertMessage("Task already Exists.");
   } else {
     stylePadding();
 

@@ -5,7 +5,8 @@
 }
 body {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .root {
@@ -18,11 +19,11 @@ body {
 
 .inputBody {
   border-bottom: 2px solid black;
-  height: 100px;
+  height: 180px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+ margin-top: 10%;
 }
 .inputBody input {
   font-size: 18px;
@@ -32,12 +33,12 @@ body {
   text-align: center;
   outline: none;
   border: none;
-  height: 40%;
+  height: 25%;
   width: 50%;
 }
 .addTaskButton {
   background-color: #86b6f6;
-  height: 40%;
+  height: 25%;
   width: 20%;
   outline: none;
   border: none;
@@ -55,4 +56,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.alertBody{
+    border: 3px solid red;
+    margin-top: 20%;
+    height: 40px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
