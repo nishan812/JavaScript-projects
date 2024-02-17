@@ -41,16 +41,19 @@ function stylePadding() {
 
 // A function that displays alert message
 function alertMessage(message) {
-  root.style.marginTop = "5%";
-  const messageBody = document.createElement("div");
-  messageBody.classList.add("alertBody");
-  body.insertBefore(messageBody, root);
+  const msgBody = document.querySelector(".alertBody");
+  if (!msgBody) {
+    const messageBody = document.createElement("div");
+    root.style.marginTop = "5%";
+    messageBody.classList.add("alertBody");
+    body.insertBefore(messageBody, root);
 
-  setTimeout(() => {
-    messageBody.remove();
-    root.style.marginTop = "20%";
-  }, 3000);
-  messageBody.innerHTML = message;
+    setTimeout(() => {
+      messageBody.remove();
+      root.style.marginTop = "20%";
+    }, 3000);
+    messageBody.innerHTML = message;
+  }
 }
 
 // Function that checks whether the added task already exists or not
