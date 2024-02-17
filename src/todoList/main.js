@@ -66,6 +66,7 @@ addTaskButton.addEventListener("click", () => {
   if (input.value == "") {
     alertMessage("Task is empty, Cannot be added.");
   } else if (checkIfTaskAlreadyAdded(input.value)) {
+    input.value=""
     alertMessage("Task already Exists.");
   } else {
     stylePadding();
