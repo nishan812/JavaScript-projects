@@ -9,22 +9,87 @@ const inputBody = document.createElement("div");
 inputBody.classList.add("inputBody");
 root.appendChild(inputBody);
 
+// Creating a body for input
+const bodyForInput=document.createElement("div");
+bodyForInput.classList.add("bodyForInput")
+inputBody.appendChild(bodyForInput)
+
 // inserting add box
 const input = document.createElement("input");
 input.classList.add("userInput");
 input.setAttribute("href", "text");
-inputBody.appendChild(input);
+bodyForInput.appendChild(input); ///////
 
 //Creating Add Task button
 const addTaskButton = document.createElement("button");
 addTaskButton.classList.add("addTaskButton");
 addTaskButton.textContent = "Add Task";
-inputBody.appendChild(addTaskButton);
+bodyForInput.appendChild(addTaskButton);///
 
 // Creating body for tasks list items
 const listItemsBody = document.createElement("div");
 listItemsBody.classList.add("listItemBody");
 root.appendChild(listItemsBody);
+
+// Creating  a filter select html for filtering or sorting
+const filterBody = document.createElement("div");
+const options =["As you Entered","By Alphabet","By Priority"]
+const filter = document.createElement("select");
+filter.o
+
+
+inputBody.appendChild(filterBody)
+
+// Creating a priority input box
+const priorityOptionBody=document.createElement("div");
+priorityOptionBody.classList.add("prioBody")
+
+// label for prio heading 
+const prioLabel=document.createElement("label");
+prioLabel.innerText="Priority Level"
+priorityOptionBody.appendChild(prioLabel)
+
+
+//high prio
+const highPrLabel = document.createElement("label"); // label for high pr
+highPrLabel.classList.add("high")
+highPrLabel.innerText="High"
+priorityOptionBody.appendChild(highPrLabel)
+const highPr =document.createElement("input")
+highPr.classList.add("prioRadio")
+highPr.setAttribute("type","radio") // setting type
+highPr.setAttribute("value","high") // setting value
+highPr.setAttribute("name","prio")
+priorityOptionBody.appendChild(highPr)
+
+// mid prio
+const midPrLabel = document.createElement("label"); // label for mid pr
+midPrLabel.classList.add("mid")
+midPrLabel.innerText="Mid"
+priorityOptionBody.appendChild(midPrLabel)
+const midPR =document.createElement("input")
+midPR.classList.add("prioRadio")
+midPR.setAttribute("type","radio") // setting type
+midPR.setAttribute("value","mid") // setting value
+midPR.setAttribute("name","prio") // setting name
+midPR.setAttribute("checked","checked")
+priorityOptionBody.appendChild(midPR)
+
+
+// low prio
+const lowPrLabel = document.createElement("label"); // label for low pr
+lowPrLabel.classList.add("low")
+lowPrLabel.innerText="Low"
+priorityOptionBody.appendChild(lowPrLabel)
+const lowPr =document.createElement("input")
+lowPr.classList.add("prioRadio")
+lowPr.setAttribute("type","radio") // setting type
+lowPr.setAttribute("value","low") // setting value
+lowPr.setAttribute("name","prio")
+priorityOptionBody.appendChild(lowPr)
+
+inputBody.appendChild(priorityOptionBody)
+
 
 // Creating array for storing tasks list all items
 const tasks = [];
