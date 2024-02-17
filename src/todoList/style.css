@@ -97,3 +97,25 @@ color: #00ff44;
 .low{
   color: #befdff;
 }
+.filterBody{
+  height: 20%;
+  margin-top:2% ;
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+
+
+}
+.filterBody h3{
+  display: inline-block;
+  margin-left: 8%;
+}
+
+.filterBody select{
+  height:100%;
+  width: 55%;
+  text-align: center;
+ 
+}

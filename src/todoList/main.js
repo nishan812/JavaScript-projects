@@ -31,14 +31,7 @@ const listItemsBody = document.createElement("div");
 listItemsBody.classList.add("listItemBody");
 root.appendChild(listItemsBody);
 
-// Creating  a filter select html for filtering or sorting
-const filterBody = document.createElement("div");
-const options =["As you Entered","By Alphabet","By Priority"]
-const filter = document.createElement("select");
-filter.o
 
-
-inputBody.appendChild(filterBody)
 
 // Creating a priority input box
 const priorityOptionBody=document.createElement("div");
@@ -90,6 +83,26 @@ priorityOptionBody.appendChild(lowPr)
 
 inputBody.appendChild(priorityOptionBody)
 
+
+// Creating  a filter select html for filtering or sorting
+const filterBody = document.createElement("div");
+filterBody.classList.add("filterBody")
+const filterHeading = document.createElement("h3");
+filterHeading.textContent="SortBy";
+filterBody.appendChild(filterHeading);
+const options =["As you Entered","By Alphabet","By Priority"]
+const filter = document.createElement("select");
+filter.setAttribute("placeholder","SortBy")
+
+
+options.forEach((optionText)=>{
+  const option = document.createElement("option");
+  option.innerText=optionText;
+  filter.appendChild(option);
+})
+filterBody.appendChild(filter)
+
+inputBody.appendChild(filterBody)
 
 // Creating array for storing tasks list all items
 const tasks = [];
