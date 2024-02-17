@@ -54,8 +54,15 @@ body {
   height: 40px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.taskItem button{
+  margin-right:10%;
+}
+.taskItem a{
+  margin-left: 10%;
 }
 
 .alertBody{

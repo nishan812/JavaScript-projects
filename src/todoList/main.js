@@ -83,7 +83,7 @@ addTaskButton.addEventListener("click", () => {
       // Creatring a li and adding the user added task value and display it.
       const userTasks = document.createElement("li");
       userTasks.classList.add("taskItem");
-      userTasks.textContent = task;
+      userTasks.innerHTML = `<a>${task}</a>`;
       listItemsBody.appendChild(userTasks);
 
       // Creating a  delete task button for added Items
