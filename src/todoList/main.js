@@ -10,9 +10,9 @@ inputBody.classList.add("inputBody");
 root.appendChild(inputBody);
 
 // Creating a body for input
-const bodyForInput=document.createElement("div");
-bodyForInput.classList.add("bodyForInput")
-inputBody.appendChild(bodyForInput)
+const bodyForInput = document.createElement("div");
+bodyForInput.classList.add("bodyForInput");
+inputBody.appendChild(bodyForInput);
 
 // inserting add box
 const input = document.createElement("input");
@@ -24,85 +24,79 @@ bodyForInput.appendChild(input); ///////
 const addTaskButton = document.createElement("button");
 addTaskButton.classList.add("addTaskButton");
 addTaskButton.textContent = "Add Task";
-bodyForInput.appendChild(addTaskButton);///
+bodyForInput.appendChild(addTaskButton); ///
 
 // Creating body for tasks list items
 const listItemsBody = document.createElement("div");
 listItemsBody.classList.add("listItemBody");
 root.appendChild(listItemsBody);
 
-
-
 // Creating a priority input box
-const priorityOptionBody=document.createElement("div");
-priorityOptionBody.classList.add("prioBody")
+const priorityOptionBody = document.createElement("div");
+priorityOptionBody.classList.add("prioBody");
 
-// label for prio heading 
-const prioLabel=document.createElement("label");
-prioLabel.innerText="Priority Level"
-priorityOptionBody.appendChild(prioLabel)
-
+// label for prio heading
+const prioLabel = document.createElement("label");
+prioLabel.innerText = "Priority Level";
+priorityOptionBody.appendChild(prioLabel);
 
 //high prio
 const highPrLabel = document.createElement("label"); // label for high pr
-highPrLabel.classList.add("high")
-highPrLabel.innerText="High"
-priorityOptionBody.appendChild(highPrLabel)
-const highPr =document.createElement("input")
-highPr.classList.add("prioRadio")
-highPr.setAttribute("type","radio") // setting type
-highPr.setAttribute("value","high") // setting value
-highPr.setAttribute("name","prio")
-priorityOptionBody.appendChild(highPr)
+highPrLabel.classList.add("high");
+highPrLabel.innerText = "High";
+priorityOptionBody.appendChild(highPrLabel);
+const highPr = document.createElement("input");
+highPr.classList.add("prioRadio");
+highPr.setAttribute("type", "radio"); // setting type
+highPr.setAttribute("value", "high"); // setting value
+highPr.setAttribute("name", "prio");
+priorityOptionBody.appendChild(highPr);
 
 // mid prio
 const midPrLabel = document.createElement("label"); // label for mid pr
-midPrLabel.classList.add("mid")
-midPrLabel.innerText="Mid"
-priorityOptionBody.appendChild(midPrLabel)
-const midPR =document.createElement("input")
-midPR.classList.add("prioRadio")
-midPR.setAttribute("type","radio") // setting type
-midPR.setAttribute("value","mid") // setting value
-midPR.setAttribute("name","prio") // setting name
-midPR.setAttribute("checked","checked")
-priorityOptionBody.appendChild(midPR)
-
+midPrLabel.classList.add("mid");
+midPrLabel.innerText = "Mid";
+priorityOptionBody.appendChild(midPrLabel);
+const midPR = document.createElement("input");
+midPR.classList.add("prioRadio");
+midPR.setAttribute("type", "radio"); // setting type
+midPR.setAttribute("value", "mid"); // setting value
+midPR.setAttribute("name", "prio"); // setting name
+midPR.setAttribute("checked", "checked");
+priorityOptionBody.appendChild(midPR);
 
 // low prio
 const lowPrLabel = document.createElement("label"); // label for low pr
-lowPrLabel.classList.add("low")
-lowPrLabel.innerText="Low"
-priorityOptionBody.appendChild(lowPrLabel)
-const lowPr =document.createElement("input")
-lowPr.classList.add("prioRadio")
-lowPr.setAttribute("type","radio") // setting type
-lowPr.setAttribute("value","low") // setting value
-lowPr.setAttribute("name","prio")
-priorityOptionBody.appendChild(lowPr)
+lowPrLabel.classList.add("low");
+lowPrLabel.innerText = "Low";
+priorityOptionBody.appendChild(lowPrLabel);
+const lowPr = document.createElement("input");
+lowPr.classList.add("prioRadio");
+lowPr.setAttribute("type", "radio"); // setting type
+lowPr.setAttribute("value", "low"); // setting value
+lowPr.setAttribute("name", "prio");
+priorityOptionBody.appendChild(lowPr);
 
-inputBody.appendChild(priorityOptionBody)
-
+inputBody.appendChild(priorityOptionBody);
 
 // Creating  a filter select html for filtering or sorting
 const filterBody = document.createElement("div");
-filterBody.classList.add("filterBody")
+filterBody.classList.add("filterBody");
 const filterHeading = document.createElement("h3");
-filterHeading.textContent="SortBy";
+filterHeading.textContent = "SortBy";
 filterBody.appendChild(filterHeading);
-const options =["As you Entered","By Alphabet","By Priority"]
+const options = ["As you Entered", "By Alphabet", "By Priority"];
 const filter = document.createElement("select");
-filter.setAttribute("placeholder","SortBy")
+filter.setAttribute("placeholder", "SortBy");
 
-
-options.forEach((optionText)=>{
+options.forEach((optionText) => {
   const option = document.createElement("option");
-  option.innerText=optionText;
+  option.innerText = optionText;
   filter.appendChild(option);
-})
-filterBody.appendChild(filter)
+});
+filterBody.appendChild(filter);
 
-inputBody.appendChild(filterBody)
+inputBody.appendChild(filterBody);
 
 // Creating array for storing tasks list all items
 const tasks = [];
@@ -136,7 +130,9 @@ function alertMessage(message) {
 
 // Function that checks whether the added task already exists or not
 function checkIfTaskAlreadyAdded(userInput) {
-  return tasks.some((task) => task.toLowerCase() === userInput.toLowerCase());
+  return tasks.some(
+    (task) => task.data.toLowerCase() === userInput.toLowerCase()
+  );
 }
 
 // Event after clicking on Add Task Button
@@ -144,7 +140,7 @@ addTaskButton.addEventListener("click", () => {
   if (input.value == "") {
     alertMessage("Task is empty, Cannot be added.");
   } else if (checkIfTaskAlreadyAdded(input.value)) {
-    input.value=""
+    input.value = "";
     alertMessage("Task already Exists.");
   } else {
     stylePadding();
@@ -154,14 +150,27 @@ addTaskButton.addEventListener("click", () => {
 
     // getting userinput
     const userInput = document.querySelector(".userInput");
-    tasks.push(userInput.value);
+
+    //getting the priority value
+    let priorityValue;
+    const priorityRadioButtons = document.querySelectorAll(".prioRadio");
+    priorityRadioButtons.forEach((radio) => {
+      if (radio.checked) {
+        priorityValue = radio.value;
+      }
+    });
+
+    // appending the user value to the tasks array
+    tasks.push({ data: userInput.value, priority: priorityValue });
+
+    console.log(tasks);
 
     // Showing tasks added by user
     tasks.forEach((task) => {
       // Creatring a li and adding the user added task value and display it.
       const userTasks = document.createElement("li");
       userTasks.classList.add("taskItem");
-      userTasks.innerHTML = `<a>${task}</a>`;
+      userTasks.innerHTML = `<a>${task.data}</a>`;
       listItemsBody.appendChild(userTasks);
 
       // Creating a  delete task button for added Items
