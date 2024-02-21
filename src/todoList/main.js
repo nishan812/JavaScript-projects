@@ -144,6 +144,7 @@ addTaskButton.addEventListener("click", () => {
     input.value = "";
     alertMessage("Task already Exists.");
   } else {
+    
     filter.value = options[0];
     stylePadding();
 
@@ -193,6 +194,7 @@ addTaskButton.addEventListener("click", () => {
     input.value = "";
 
     stylePadding();
+    midPR.checked=true;
   }
 });
 
