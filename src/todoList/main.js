@@ -138,7 +138,7 @@ function checkIfTaskAlreadyAdded(userInput) {
 
 // Event after clicking on Add Task Button
 addTaskButton.addEventListener("click", () => {
-  if (input.value == "") {
+  if (input.value.trim() == "") {
     alertMessage("Task is empty, Cannot be added.");
   } else if (checkIfTaskAlreadyAdded(input.value)) {
     input.value = "";
