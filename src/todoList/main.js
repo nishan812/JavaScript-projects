@@ -217,6 +217,5 @@ root.addEventListener("click", (e) => {
       console.log(tasks);
     }
   }
-
-  //removing the li item
+  stylePadding()
 });

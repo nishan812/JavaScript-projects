@@ -10,7 +10,7 @@ body {
 }
 
 .root {
-  background-color: #7b66ff;
+  background-color: #1d2b53;
   margin-top: 20%;
   width: 600px;
   border-top-left-radius: 20px;
@@ -18,10 +18,12 @@ body {
 }
 
 .inputBody {
+  color: white;
   border-bottom: 2px solid black;
   height: 180px;
   width: 100%;
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
   justify-content: center;
 }
@@ -88,37 +90,36 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.high{
-  color: #f1cd00;
+.high {
+  font-size: 20px;
+  color: #ff004d;
 }
-.mid{
-color: #00ff44;
+.mid {
+  font-size: 18px;
+
+  color: #00ff44;
 }
-.low{
-  color: #befdff;
+.low {
+  color: #f5f5f5;
 }
-.filterBody{
+.filterBody {
   height: 20%;
-  margin-top:2% ;
+  margin-top: 2%;
   width: 40%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  
-
-
 }
-.filterBody h3{
+.filterBody h3 {
   display: inline-block;
   margin-left: 8%;
 }
 
-.filterBody select{
-  height:100%;
+.filterBody select {
+  height: 100%;
   width: 55%;
   text-align: center;
- 
 }
-.userInput{
+.userInput {
   text-align: center;
 }
