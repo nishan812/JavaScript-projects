@@ -144,6 +144,7 @@ addTaskButton.addEventListener("click", () => {
     input.value = "";
     alertMessage("Task already Exists.");
   } else {
+    filter.value = options[0];
     stylePadding();
 
     // Clearing the items listed first.
@@ -274,6 +275,55 @@ filterOption.addEventListener("change", (e) => {
 
   //for sorting when by priority is selected
   if (target.value === "By Priority") {
-    console.log("prio");
+    const sortedArr = [];
+
+    // algorithm for sorting accorind to priority
+    tasks.forEach((task) => {
+      if (task.priority === "high") {
+        sortedArr.push(task);
+      }
+    });
+    tasks.forEach((task) => {
+      if (task.priority === "mid") {
+        sortedArr.push(task);
+      }
+    });
+    tasks.forEach((task) => {
+      if (task.priority === "low") {
+        sortedArr.push(task);
+      }
+    });
+
+    listItemsBody.innerHTML = "";
+    sortedArr.forEach((task) => {
+      // Creatring a li and adding the user added task value and display it.
+      const userTasks = document.createElement("li");
+      userTasks.classList.add("taskItem");
+      userTasks.innerHTML = `<a>${task.data}</a>`;
+      listItemsBody.appendChild(userTasks);
+
+      // for high prio
+      if (task.priority === "high") {
+        userTasks.style.backgroundColor = "#FFCAD4";
+      }
+
+      // for mid prio
+      if (task.priority === "mid") {
+        userTasks.style.backgroundColor = "#9ADE7B";
+      }
+
+      // for low prio
+      if (task.priority === "low") {
+        userTasks.style.backgroundColor = "#BED1CF";
+      }
+
+      // Creating a  delete task button for added Items
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      //adding class for button
+      deleteButton.classList.add("deleteButton");
+      // Adding delete Button for each items that are added
+      userTasks.appendChild(deleteButton);
+    });
   }
 });
