@@ -88,6 +88,7 @@ filterBody.appendChild(filterHeading);
 const options = ["As you Entered", "By Alphabet", "By Priority"];
 const filter = document.createElement("select");
 filter.setAttribute("placeholder", "SortBy");
+filter.classList.add("filter");
 
 options.forEach((optionText) => {
   const option = document.createElement("option");
@@ -163,8 +164,6 @@ addTaskButton.addEventListener("click", () => {
     // appending the user value to the tasks array
     tasks.push({ data: userInput.value, priority: priorityValue });
 
-    console.log(tasks);
-
     // reseting the priority level as the task is added
     priorityRadioButtons.forEach((radio) => {
       if (radio.value == "mid") {
@@ -211,11 +210,70 @@ root.addEventListener("click", (e) => {
     );
 
     if (itemIndexInArray != -1) {
-      const removeItem = tasks.splice(itemIndexInArray, 1);
-      console.log(itemToRemove.firstChild.textContent);
-      console.log(itemIndexInArray, 1);
-      console.log(tasks);
+      tasks.splice(itemIndexInArray, 1);
+      // console.log(itemToRemove.firstChild.textContent);
+      // console.log(itemIndexInArray, 1);
+      // console.log(tasks);
     }
   }
-  stylePadding()
+  stylePadding();
+});
+
+const filterOption = document.querySelector(".filter");
+filterOption.addEventListener("change", (e) => {
+  const target = e.target;
+
+  //for sorting when as you enter is selected
+  if (target.value === "As you Entered") {
+    listItemsBody.innerHTML = "";
+    tasks.forEach((task) => {
+      // Creatring a li and adding the user added task value and display it.
+      const userTasks = document.createElement("li");
+      userTasks.classList.add("taskItem");
+      userTasks.innerHTML = `<a>${task.data}</a>`;
+      listItemsBody.appendChild(userTasks);
+
+      // Creating a  delete task button for added Items
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      //adding class for button
+      deleteButton.classList.add("deleteButton");
+      // Adding delete Button for each items that are added
+      userTasks.appendChild(deleteButton);
+    });
+  }
+
+  //for sorting when By alphabet is selected
+  if (target.value === "By Alphabet") {
+    console.log("alpha");
+    const sortedArray = [...tasks].sort((a, b) => {
+      const nameA = a.data.toLowerCase();
+      const nameB = b.data.toLowerCase();
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      return 0;
+    });
+
+    listItemsBody.innerHTML = "";
+    sortedArray.forEach((task) => {
+      // Creatring a li and adding the user added task value and display it.
+      const userTasks = document.createElement("li");
+      userTasks.classList.add("taskItem");
+      userTasks.innerHTML = `<a>${task.data}</a>`;
+      listItemsBody.appendChild(userTasks);
+
+      // Creating a  delete task button for added Items
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      //adding class for button
+      deleteButton.classList.add("deleteButton");
+      // Adding delete Button for each items that are added
+      userTasks.appendChild(deleteButton);
+    });
+  }
+
+  //for sorting when by priority is selected
+  if (target.value === "By Priority") {
+    console.log("prio");
+  }
 });
