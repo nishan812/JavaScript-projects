@@ -165,6 +165,13 @@ addTaskButton.addEventListener("click", () => {
 
     console.log(tasks);
 
+    // reseting the priority level as the task is added
+    priorityRadioButtons.forEach((radio) => {
+      if (radio.value == "mid") {
+        radio.setAttribute("checked", "checked");
+      }
+    });
+
     // Showing tasks added by user
     tasks.forEach((task) => {
       // Creatring a li and adding the user added task value and display it.
@@ -191,21 +198,25 @@ addTaskButton.addEventListener("click", () => {
 
 //Event for deleting the task items
 root.addEventListener("click", (e) => {
-  const target = e.target;
+  const target = e.target; // getting the delete button as target
+
+  //triggering only if the delete button is clicked
   if (target.classList.contains("deleteButton")) {
-    const listItem = target.parentNode; // getting current list item
-    const itemText = listItem.firstChild.textContent;
-    listItem.remove();
+    const itemToRemove = target.parentNode;
+    itemToRemove.remove();
 
-    //test: console.log(`Before :${tasks}`);
-    //test: console.log(itemText);
+    // Removing the item from the array now
+    const itemIndexInArray = tasks.findIndex(
+      (task) => task.data === itemToRemove.firstChild.textContent
+    );
 
-    // Removing item from array
-    const itemToRemove = tasks.findIndex((task) => task === itemText);
-    if (itemToRemove !== -1) {
-      tasks.splice(itemToRemove, 1);
-      // test:  console.log(`After: ${tasks}`);
+    if (itemIndexInArray != -1) {
+      const removeItem = tasks.splice(itemIndexInArray, 1);
+      console.log(itemToRemove.firstChild.textContent);
+      console.log(itemIndexInArray, 1);
+      console.log(tasks);
     }
-    stylePadding();
   }
+
+  //removing the li item
 });
