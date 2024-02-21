@@ -306,17 +306,17 @@ filterOption.addEventListener("change", (e) => {
 
       // for high prio
       if (task.priority === "high") {
-        userTasks.style.backgroundColor = "#FFCAD4";
+        userTasks.style.border = "5px solid #D35656";
       }
 
       // for mid prio
       if (task.priority === "mid") {
-        userTasks.style.backgroundColor = "#9ADE7B";
+        userTasks.style.border = "4px solid #9ADE7B";
       }
 
       // for low prio
       if (task.priority === "low") {
-        userTasks.style.backgroundColor = "#BED1CF";
+        userTasks.style.border = "2px solid #000000";
       }
 
       // Creating a  delete task button for added Items

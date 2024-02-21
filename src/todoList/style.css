@@ -58,6 +58,7 @@ body {
 }
 
 .taskItem {
+  color: #121212;
   background-color: #f0f3ff;
   border: 2px solid black;
   border-radius: 20px;
