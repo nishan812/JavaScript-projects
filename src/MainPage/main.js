@@ -99,7 +99,7 @@ smowAnchor.innerHTML="Send a Message to a User on Whatsapp"
 
 const items = [{
   link:bmiRedirect,
-  discription:"Calculate your Body mass index"
+  discription:"Body mass index calculator, calculate your BMI and improve your health."
 },
 {
 link:formValidationRedirect,
@@ -107,7 +107,7 @@ discription:"A simple form with validation."
 },
 {
   link:todoRedirect ,
-  discription:" To Do list to manage your tasks. "
+  discription:" Advance To-Do list for managing your tasks, with advance features. "
 },
 {
   link:hcpRedirect,
@@ -128,15 +128,15 @@ discription:"A simple form with validation."
 },
 {
   link:githubProfileViewerRedirect ,
-  discription:"Search any users on github and view their profile easly."
+  discription:"Search any users on github and view their all details."
 },
 {
   link:mrsRedirect,
-  discription:"A system that suggests you movie that you like. "
+  discription:"A system that suggests you movie that you may like. "
 },
 {
   link:smowRedirect ,
-  discription:"Send message to user you like on whatsapp."
+  discription:"Send message to user on whatsapp."
 },
 {
   link:wssRedirect ,
@@ -176,8 +176,4 @@ items.forEach((item)=>{
     const linkHref = target.querySelector("a").getAttribute("href");
     window.location.href = linkHref;
   })
-  
-
 })
-
-
