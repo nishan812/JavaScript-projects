@@ -172,7 +172,6 @@ addTaskButton.addEventListener("click", () => {
         radio.setAttribute("checked", "checked");
       }
     });
-
     // Showing tasks added by user
     tasks.forEach((task) => {
       // Creatring a li and adding the user added task value and display it.
@@ -329,3 +328,5 @@ filterOption.addEventListener("change", (e) => {
     });
   }
 });
+
+
