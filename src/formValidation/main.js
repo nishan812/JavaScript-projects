@@ -223,6 +223,9 @@ function isValidPhoneNumber(phoneNumber) {
  *
  */
 submitButton.addEventListener("click", (e) => {
+  // console.log(`before ${firstName.value}`);
+  // console.log(`after ${firstName.value.trim()}`);
+  
   //Validation
   alertBox.innerHTML = "";
 
@@ -230,40 +233,40 @@ submitButton.addEventListener("click", (e) => {
   const validationMessages = [];
 
   //firstname
-  if (firstName.value === "") {
+  if (firstName.value.trim() ==="") {
     validationMessages.push("First name is empty.");
   }
 
   //lastname
-  if (lastName.value === "") {
+  if (lastName.value.trim() === "") {
     validationMessages.push("Last name is empty.");
   }
   //age
-  if (age.value === "") {
+  if (age.value.trim() === "") {
     validationMessages.push("Age is empty.");
   } else if (age.value >= 100 || age.value <= 0) {
     validationMessages.push(`${age.value} is an invalid age.`);
   }
 
   //phone number
-  if (phone.value === "") {
+  if (phone.value.trim() === "") {
     validationMessages.push("Phone number is empty.");
-  } else if (!isValidPhoneNumber(phone.value)) {
+  } else if (!isValidPhoneNumber(phone.value.trim())) {
     validationMessages.push("Invalid phone number.");
   }
 
   //email
-  if (email.value === "") {
+  if (email.value.trim() === "") {
     validationMessages.push("Email is empty.");
-  } else if (!isValidEmail(email.value)) {
+  } else if (!isValidEmail(email.value.trim())) {
     validationMessages.push("Invalid Email address.");
   }
 
   //permanent address municipality
-  if (pMunicipality.value === "") {
+  if (pMunicipality.value.trim() === "") {
     validationMessages.push("Permanent Address Municipality is empty. ");
   } else if (
-    /\d/.test(pMunicipality.value) ||
+    /\d/.test(pMunicipality.value.trim()) ||
     /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pMunicipality.value)
   ) {
     validationMessages.push(
@@ -272,17 +275,17 @@ submitButton.addEventListener("click", (e) => {
   }
 
   //permanent address municipality
-  if (pWard.value === "") {
+  if (pWard.value.trim() === "") {
     validationMessages.push("Permanent Address Ward is empty.");
-  } else if (Number(pWard.value) <= 0 || Number(pWard.value) >= 50) {
+  } else if (Number(pWard.value.trim()) <= 0 || Number(pWard.value) >= 50) {
     validationMessages.push("Invalid Permanent Address Ward.");
   }
 
   //current address municipality
-  if (cMunicipality.value === "") {
+  if (cMunicipality.value.trim() === "") {
     validationMessages.push("Current Address Municipality is empty. ");
   } else if (
-    /\d/.test(cMunicipality.value) ||
+    /\d/.test(cMunicipality.value.trim()) ||
     /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(cMunicipality.value)
   ) {
     validationMessages.push(
@@ -290,9 +293,9 @@ submitButton.addEventListener("click", (e) => {
     );
   }
   //current address ward
-  if (cWard.value === "") {
+  if (cWard.value.trim() === "") {
     validationMessages.push("Current Address Ward is empty.");
-  } else if (Number(cWard.value) <= 0 || Number(cWard.value) >= 50) {
+  } else if (Number(cWard.value.trim()) <= 0 || Number(cWard.value) >= 50) {
     validationMessages.push("Invalid Current Address Ward.");
   }
 
@@ -307,9 +310,9 @@ submitButton.addEventListener("click", (e) => {
     //runs after the all condition are meet
     const userdata = {
       user: {
-        first_name: capitalize(firstName.value),
+        first_name: capitalize(firstName.value.trim()),
         middle_name: middleName.value,
-        last_name: capitalize(lastName.value),
+        last_name: capitalize(lastName.value.trim()),
         user_gender: gender.value,
         user_age: age.value,
         isAdult: (function (age) {
