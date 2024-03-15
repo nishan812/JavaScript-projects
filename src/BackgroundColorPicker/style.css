@@ -17,6 +17,19 @@ body{
 }
 .colorContainer{
     border: 2px solid black;
-    height: 300px;
-    width: 600px;
+    height: 400px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap ;
+    gap: 10px;
+}
+.colo{
+    color: white;
+    height: 50px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
