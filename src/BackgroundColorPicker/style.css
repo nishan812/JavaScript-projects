@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+body{
+    height: 100vh;
+    
+
+}
+.root{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.colorContainer{
+    border: 2px solid black;
+    height: 300px;
+    width: 600px;
+}

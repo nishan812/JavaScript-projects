@@ -29,7 +29,7 @@ const hcpRedirect = document.createElement("li");
 const hcpAnchor = document.createElement("a");
 hcpRedirect.appendChild(hcpAnchor);
 hcpAnchor.innerHTML = "Background Color picker";
-hcpAnchor.setAttribute("href", "#");
+hcpAnchor.setAttribute("href", "/src/BackgroundColorPicker/index.html");
 
 // Button to redirect to Digital clock
 const digitalClockRedirect = document.createElement("li");
