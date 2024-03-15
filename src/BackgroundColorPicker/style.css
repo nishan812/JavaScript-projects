@@ -17,7 +17,7 @@ body{
 }
 .colorContainer{
     border: 2px solid black;
-    height: 400px;
+    height: 420px;
     width: 550px;
     display: flex;
     justify-content: center;
@@ -26,6 +26,8 @@ body{
     gap: 10px;
 }
 .colo{
+    border: 2px dashed white;
+    border-radius: 10px;
     color: white;
     height: 50px;
     width: 120px;

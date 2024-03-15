@@ -15,7 +15,7 @@ for (let key in colors){
     colo.classList.add("colo")
     colo.textContent=capitalize(key)
     colo.style.backgroundColor=colors[key]
-    colo.setAttribute("value",`${key}`)
+    colo.setAttribute("id",`${key}`)
     colorContainer.appendChild(colo)
 
     if(key=="cyan" || key=="yellow" || key=="greenYellow" || key=="gold" || key=="springGreen" || key=="lime" || key=="chartreuse"){
@@ -26,3 +26,8 @@ for (let key in colors){
 function capitalize(text){
     return text.charAt(0).toUpperCase() + text.slice(1)
 }
+
+colorContainer.addEventListener("click",(e)=>{
+    const target = e.target
+    body.style.backgroundColor=colors[target.id]
+})
