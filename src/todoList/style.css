@@ -124,3 +124,14 @@ body {
 .userInput {
   text-align: center;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .root{
+   width: 410px;
+  }
+  .filterBody{
+    width: 60%;
+  }
+  
+ }
