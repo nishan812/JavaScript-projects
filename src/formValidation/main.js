@@ -244,7 +244,7 @@ submitButton.addEventListener("click", (e) => {
   //age
   if (age.value.trim() === "") {
     validationMessages.push("Age is empty.");
-  } else if (age.value >= 100 || age.value <= 0) {
+  } else if (age.value >= 100 || age.value <= 0 || age.value.length>=3) {
     validationMessages.push(`${age.value} is an invalid age.`);
   }
 
