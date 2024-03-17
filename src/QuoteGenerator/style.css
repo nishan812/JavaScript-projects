@@ -101,6 +101,15 @@
     height: 60px;
     width: 100%;
   }
+  @media only screen and (max-width: 600px) {
+    .container{
+     height: 400px;
+     width: 380px;
+    }
+    
+   }
+
+
   .clickCount {
     border-bottom: 2px solid #427d9d;
     border-left: 2px solid #427d9d;
@@ -111,7 +120,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 450px;
+    width: 380px;
   }
   /* button style */
   .cssbuttons-io-button {
