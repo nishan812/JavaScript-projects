@@ -36,7 +36,7 @@ const digitalClockRedirect = document.createElement("li");
 const digitalClockAnchor = document.createElement("a");
 digitalClockRedirect.appendChild(digitalClockAnchor);
 digitalClockAnchor.innerHTML = "Digital Clock";
-digitalClockAnchor.setAttribute("href", "#");
+digitalClockAnchor.setAttribute("href", "/src/digitalClock/index.html");
 
 // Button for Popup Message Generation
 const PMG = document.createElement("li");
