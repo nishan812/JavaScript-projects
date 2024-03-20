@@ -9,6 +9,20 @@ const searchBody = document.createElement("div");
 searchBody.classList.add("searchBody");
 root.appendChild(searchBody);
 
+
+
+
+/**
+ * 
+ * Functions and protoypes
+ * 
+ */
+
+//prototype for string that capitalizes
+String.prototype.capitalize =function(){
+  return this[0].toUpperCase()+this.slice(1)
+}
+
 //function to give alert messages
 function alertMessage(mes) {
   alertBar.classList.remove("alertBar_h");
@@ -17,6 +31,14 @@ function alertMessage(mes) {
     alertBar.classList.add("alertBar_h");
   }, 3000);
 }
+
+
+
+
+
+
+
+// (text)=>text[0].toUpperCase()+text.slice(1)
 
 const inputSearchBox = document.createElement("input");
 inputSearchBox.classList.add("inputSearchBox");
@@ -40,23 +62,45 @@ searchButton.addEventListener("click", () => {
           alertMessage("User doesnot exist");
         } else {
           inputSearchBox.value = "";
-          searchBody.style.display="none"
+          searchBody.style.display = "none";
           const card = document.createElement("div");
-          card.classList.add("card")
-          root.appendChild(card)
+          card.classList.add("card");
+          root.appendChild(card);
 
           const imageSection = document.createElement("div");
-          imageSection.classList.add("imageSection")
-          card.appendChild(imageSection)
+          imageSection.classList.add("imageSection");
+          card.appendChild(imageSection);
 
           const image = document.createElement("div");
           image.classList.add("image");
-          image.style.backgroundImage=`url(${data.avatar_url})`
+          image.style.backgroundImage = `url(${data.avatar_url})`;
           imageSection.appendChild(image);
 
+          const infoSectionForCard = document.createElement("div");
+          infoSectionForCard.classList.add("infoSectionForCard");
+          card.appendChild(infoSectionForCard);
+
+          const dataToDisplayInCard = {
+            name: data.name,
+            email: data.email,
+            company:data.company,
+            type: data.type
+          };
+
+          for (let key in dataToDisplayInCard) {
+            const x = document.createElement("div");
+            x.textContent = `${key.capitalize()}: ${
+              dataToDisplayInCard[key] == null
+                ? (textContent = "Not Available!")
+                : dataToDisplayInCard[key]
+            }`;
+            infoSectionForCard.appendChild(x);
+          }
 
 
 
+
+          
 
 
 
