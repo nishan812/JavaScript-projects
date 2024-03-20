@@ -108,7 +108,11 @@ searchButton.addEventListener("click", () => {
           buttonBodyOnCard.appendChild(showFullDetailsButton)
 
 
-          
+          const searchAnotherUserButton=document.createElement("button");
+          searchAnotherUserButton.classList.add("searchAnotherUserButton")
+          searchAnotherUserButton.textContent="Search Another User"
+          buttonBodyOnCard.appendChild(searchAnotherUserButton);
+
 
 
 
