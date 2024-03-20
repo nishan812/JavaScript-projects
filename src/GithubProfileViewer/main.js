@@ -51,11 +51,13 @@ searchButton.addEventListener("click", () => {
   if (inputByUser == "") {
     alertMessage("username is empty");
   } else {
+    searchButton.disabled=true
     fetch(`https://api.github.com/users/${inputByUser}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message == "Not Found") {
           alertMessage("User doesnot exist");
+          searchButton.disabled=false
         } else {
           inputSearchBox.value = "";
           searchBody.style.display = "none";
@@ -140,8 +142,6 @@ searchButton.addEventListener("click", () => {
                 updatedAt: data.updated_at,
                 gotoProfile: data.html_url,
               };
-
-              console.log(full_dataToDisplay);
 
               for (let key in full_dataToDisplay) {
                 const item = document.createElement("div");
