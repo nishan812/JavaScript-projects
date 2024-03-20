@@ -27,6 +27,22 @@
 }
 .searchBody {
   border: 2px solid black;
-  height: 200px;
-  width: 500px;
+  height: 100px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputSearchBox{
+  background-color: red;
+  height: 30px;
+  width:50% ;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+.searchButton{
+  border-left: none;
+  height: 30px;
+  width: 20%;
 }
