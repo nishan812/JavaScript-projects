@@ -9,43 +9,32 @@ const searchBody = document.createElement("div");
 searchBody.classList.add("searchBody");
 root.appendChild(searchBody);
 
-
-
-
 /**
- * 
+ *
  * Functions and protoypes
- * 
+ *
  */
 
 //prototype for string that capitalizes
-String.prototype.capitalize =function(){
-  return this[0].toUpperCase()+this.slice(1)
-}
+String.prototype.capitalize = function () {
+  return this[0].toUpperCase() + this.slice(1);
+};
 
 //function to give alert messages
 function alertMessage(mes) {
-  if(root.firstChild.classList!="alertBar"){
-  alertBar.classList.remove("alertBar_h");
-  alertBar.textContent = `Alert: ${mes}`;
-  setTimeout(() => {
-    alertBar.classList.add("alertBar_h");
-  }, 3000);
-  alertBar.scrollIntoView({
-    behavior:"smooth",
-    block:"start",
-    inline:"start"
-  })
+  if (root.firstChild.classList != "alertBar") {
+    alertBar.classList.remove("alertBar_h");
+    alertBar.textContent = `Alert: ${mes}`;
+    setTimeout(() => {
+      alertBar.classList.add("alertBar_h");
+    }, 3000);
+    alertBar.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start",
+    });
+  }
 }
-}
-
-
-
-
-
-
-
-// (text)=>text[0].toUpperCase()+text.slice(1)
 
 const inputSearchBox = document.createElement("input");
 inputSearchBox.classList.add("inputSearchBox");
@@ -90,8 +79,8 @@ searchButton.addEventListener("click", () => {
           const dataToDisplayInCard = {
             name: data.name,
             email: data.email,
-            company:data.company,
-            type: data.type
+            company: data.company,
+            type: data.type,
           };
 
           for (let key in dataToDisplayInCard) {
@@ -104,55 +93,78 @@ searchButton.addEventListener("click", () => {
             infoSectionForCard.appendChild(x);
           }
 
-          const buttonBodyOnCard=document.createElement("div");
+          const buttonBodyOnCard = document.createElement("div");
           buttonBodyOnCard.classList.add("buttonBodyOnCard");
-          card.appendChild(buttonBodyOnCard)
+          card.appendChild(buttonBodyOnCard);
 
+          const showFullDetailsButton = document.createElement("button");
+          showFullDetailsButton.textContent = "Show Full detail";
+          showFullDetailsButton.classList.add("showFullDetailsButton");
+          buttonBodyOnCard.appendChild(showFullDetailsButton);
 
-          const showFullDetailsButton=document.createElement("button")
-          showFullDetailsButton.textContent="Show Full detail"
-          showFullDetailsButton.classList.add("showFullDetailsButton")
-          buttonBodyOnCard.appendChild(showFullDetailsButton)
-
-
-          const searchAnotherUserButton=document.createElement("button");
-          searchAnotherUserButton.classList.add("searchAnotherUserButton")
-          searchAnotherUserButton.textContent="Search Another User"
+          const searchAnotherUserButton = document.createElement("button");
+          searchAnotherUserButton.classList.add("searchAnotherUserButton");
+          searchAnotherUserButton.textContent = "Search Another User";
           buttonBodyOnCard.appendChild(searchAnotherUserButton);
 
-
           //event for button show full details
-          showFullDetailsButton.addEventListener("click",()=>{
-      
-            if(root.lastChild.classList=="fullDeatailsBody"){
-              alertMessage("Already displayed")
+          showFullDetailsButton.addEventListener("click", () => {
+            if (root.lastChild.classList == "fullDeatailsBody") {
+              alertMessage("Already displayed");
+            } else {
+              const fullDeatailsBody = document.createElement("div");
+              fullDeatailsBody.classList.add("fullDeatailsBody");
+              root.appendChild(fullDeatailsBody);
+              fullDeatailsBody.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "start",
+              });
+
+              const full_dataToDisplay = {
+                type: data.type,
+                name: data.name,
+                username: data.login,
+                id: data.id,
+                bio: data.bio,
+                company: data.company,
+                location: data.location,
+                email: data.email,
+                twitter: data.twitter_username,
+                hireable: data.hireable,
+                followers: data.followers,
+                following: data.following,
+                public_repos: data.public_repos,
+                blog: data.blog,
+                createdAt: data.created_at,
+                updatedAt: data.updated_at,
+                gotoProfile: data.html_url,
+              };
+
+              console.log(full_dataToDisplay);
+
+              for (let key in full_dataToDisplay) {
+                const item = document.createElement("div");
+                item.innerHTML = `${key.capitalize()}: ${
+                  full_dataToDisplay[key] == null
+                    ? "Not Availabel !"
+                    : full_dataToDisplay[key] == ""
+                    ? "Not Found !"
+                    : key == "blog" || key == "gotoProfile"
+                    ? `<a href=${full_dataToDisplay[key]}>${full_dataToDisplay[key]}</a>`
+                    : full_dataToDisplay[key]
+                }`;
+
+                fullDeatailsBody.append(item);
+                item.style.display = "inline-block";
+              }
             }
-            else{
+          });
 
-            
-            const fullDeatailsBody=document.createElement("div");
-            fullDeatailsBody.classList.add("fullDeatailsBody");
-            root.appendChild(fullDeatailsBody)
-            fullDeatailsBody.scrollIntoView({
-              behavior:"smooth",
-              block:"start",
-              inline:"start"
-            });
-          }
-            
-          })
-
-          
-
-
-
-
-
-          //event fot button search another user 
-          searchAnotherUserButton.addEventListener("click",()=>{
-            location.reload()
-          })
-
+          //event fot button search another user
+          searchAnotherUserButton.addEventListener("click", () => {
+            location.reload();
+          });
         }
       });
   }

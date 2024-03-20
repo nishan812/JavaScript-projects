@@ -95,8 +95,14 @@
   padding-right: 10px;
 }
 .fullDeatailsBody{
+  padding: 5%;
   margin-top: 10%;
   border: 2px solid black;
-  height: 700px;
-  width: 600px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+
 }
