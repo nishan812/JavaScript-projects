@@ -25,6 +25,7 @@ String.prototype.capitalize =function(){
 
 //function to give alert messages
 function alertMessage(mes) {
+  if(root.firstChild.classList!="alertBar"){
   alertBar.classList.remove("alertBar_h");
   alertBar.textContent = `Alert: ${mes}`;
   setTimeout(() => {
@@ -35,6 +36,7 @@ function alertMessage(mes) {
     block:"start",
     inline:"start"
   })
+}
 }
 
 
