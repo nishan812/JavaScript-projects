@@ -119,7 +119,9 @@ searchButton.addEventListener("click", () => {
 
 
 
-
+          searchAnotherUserButton.addEventListener("click",()=>{
+            location.reload()
+          })
 
         }
       });
