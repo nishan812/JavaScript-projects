@@ -51,13 +51,13 @@ searchButton.addEventListener("click", () => {
   if (inputByUser == "") {
     alertMessage("username is empty");
   } else {
-    searchButton.disabled=true
+    searchButton.disabled = true;
     fetch(`https://api.github.com/users/${inputByUser}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message == "Not Found") {
           alertMessage("User doesnot exist");
-          searchButton.disabled=false
+          searchButton.disabled = false;
         } else {
           inputSearchBox.value = "";
           searchBody.style.display = "none";
