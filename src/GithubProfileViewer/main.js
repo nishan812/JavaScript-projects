@@ -29,16 +29,23 @@ searchButton.textContent = "Search";
 searchBody.appendChild(searchButton);
 
 searchButton.addEventListener("click", () => {
-  if (inputSearchBox.value.trim() == "") {
+  const inputByUser = inputSearchBox.value.trim().toLowerCase();
+  if (inputByUser == "") {
     alertMessage("username is empty");
   } else {
-    inputSearchBox.value = "";
-    fetch(`https://api.github.com/users/${inputSearchBox.value}`)
-      .then((res) => {
-        return res.json();
-      })
+    fetch(`https://api.github.com/users/${inputByUser}`)
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.message == "Not Found") {
+          alertMessage("User doesnot exist");
+        } else {
+          inputSearchBox.value = "";
+
+
+
+
+          
+        }
       });
   }
 });
