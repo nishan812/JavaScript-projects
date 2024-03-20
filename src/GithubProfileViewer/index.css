@@ -46,3 +46,20 @@
   height: 30px;
   width: 20%;
 }
+.card{
+  border: 2px solid black;
+  height: 500px;
+  width: 350px;
+}
+.imageSection{
+  border-bottom:2px solid black ;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image{
+  height: 90%;
+  width: 60%;
+  background-size: cover;
+}

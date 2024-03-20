@@ -20,7 +20,7 @@ function alertMessage(mes) {
 
 const inputSearchBox = document.createElement("input");
 inputSearchBox.classList.add("inputSearchBox");
-inputSearchBox.setAttribute("placeholder", "1");
+inputSearchBox.setAttribute("placeholder", "nishan812");
 searchBody.appendChild(inputSearchBox);
 
 const searchButton = document.createElement("button");
@@ -40,11 +40,26 @@ searchButton.addEventListener("click", () => {
           alertMessage("User doesnot exist");
         } else {
           inputSearchBox.value = "";
+          searchBody.style.display="none"
+          const card = document.createElement("div");
+          card.classList.add("card")
+          root.appendChild(card)
+
+          const imageSection = document.createElement("div");
+          imageSection.classList.add("imageSection")
+          card.appendChild(imageSection)
+
+          const image = document.createElement("div");
+          image.classList.add("image");
+          image.style.backgroundImage=`url(${data.avatar_url})`
+          imageSection.appendChild(image);
 
 
 
 
-          
+
+
+
         }
       });
   }
