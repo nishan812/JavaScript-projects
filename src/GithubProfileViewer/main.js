@@ -97,10 +97,23 @@ searchButton.addEventListener("click", () => {
             infoSectionForCard.appendChild(x);
           }
 
+          const buttonBodyOnCard=document.createElement("div");
+          buttonBodyOnCard.classList.add("buttonBodyOnCard");
+          card.appendChild(buttonBodyOnCard)
 
+
+          const showFullDetailsButton=document.createElement("button")
+          showFullDetailsButton.textContent="Show Full detail"
+          showFullDetailsButton.classList.add("showFullDetailsButton")
+          buttonBodyOnCard.appendChild(showFullDetailsButton)
 
 
           
+
+
+
+
+
 
 
 
