@@ -22,6 +22,9 @@
   padding: 1%;
   color: red;
 }
+.alertBar_h{
+  display: none;
+}
 .searchBody {
   border: 2px solid black;
   height: 200px;
