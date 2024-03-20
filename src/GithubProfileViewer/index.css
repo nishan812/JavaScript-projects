@@ -4,12 +4,12 @@
   border: border-box;
 }
 .root {
-  height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10%;
+  padding: 10%;
 }
 .alertBar {
   border: 5px double black;
@@ -21,6 +21,8 @@
   font-size: 20px;
   padding: 1%;
   color: red;
+  margin-bottom: 30%;
+  margin-top: 10%;
 }
 .alertBar_h{
   display: none;
@@ -48,8 +50,8 @@
 }
 .card{
   border: 2px solid black;
-  height: 500px;
-  width: 350px;
+  height: 450px;
+  width: 300px;
 }
 .imageSection{
   border-bottom:2px solid black ;
@@ -60,7 +62,7 @@
 }
 .image{
   height: 90%;
-  width: 60%;
+  width: 65%;
   background-size: cover;
 }
 .infoSectionForCard{
@@ -91,4 +93,10 @@
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
+}
+.fullDeatailsBody{
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 700px;
+  width: 600px;
 }

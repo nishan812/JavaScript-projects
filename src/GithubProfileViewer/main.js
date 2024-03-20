@@ -30,6 +30,11 @@ function alertMessage(mes) {
   setTimeout(() => {
     alertBar.classList.add("alertBar_h");
   }, 3000);
+  alertBar.scrollIntoView({
+    behavior:"smooth",
+    block:"start",
+    inline:"start"
+  })
 }
 
 
@@ -114,11 +119,34 @@ searchButton.addEventListener("click", () => {
           buttonBodyOnCard.appendChild(searchAnotherUserButton);
 
 
+          //event for button show full details
+          showFullDetailsButton.addEventListener("click",()=>{
+      
+            if(root.lastChild.classList=="fullDeatailsBody"){
+              alertMessage("Already displayed")
+            }
+            else{
+
+            
+            const fullDeatailsBody=document.createElement("div");
+            fullDeatailsBody.classList.add("fullDeatailsBody");
+            root.appendChild(fullDeatailsBody)
+            fullDeatailsBody.scrollIntoView({
+              behavior:"smooth",
+              block:"start",
+              inline:"start"
+            });
+          }
+            
+          })
+
+          
 
 
 
 
 
+          //event fot button search another user 
           searchAnotherUserButton.addEventListener("click",()=>{
             location.reload()
           })
