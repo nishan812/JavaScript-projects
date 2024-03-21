@@ -4,7 +4,6 @@
   border: border-box;
 }
 .root {
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,8 +23,8 @@
   margin-bottom: 30%;
   margin-top: 10%;
 }
-.alertBar_h{
-  display:none;
+.alertBar_h {
+  display: none;
 }
 .searchBody {
   border-top-left-radius: 20px;
@@ -38,41 +37,40 @@
   justify-content: center;
   align-items: center;
 }
-.inputSearchBox{
+.inputSearchBox {
   color: white;
-  background-color: #98ABEE;
+  background-color: #98abee;
   height: 30px;
-  width:50% ;
+  width: 50%;
   border: none;
   outline: none;
   text-align: center;
 }
-.searchButton{
+.searchButton {
   border-left: none;
   height: 30px;
   width: 20%;
 }
-.card{
+.card {
   border: 2px solid black;
   height: 450px;
   width: 300px;
 }
-.imageSection{
-  border-bottom:2px solid black ;
+.imageSection {
+  border-bottom: 2px solid black;
   background-color: #201658;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.image{
- 
+.image {
   height: 90%;
   width: 65%;
   background-size: cover;
 }
-.infoSectionForCard{
-  background-color: #F0F3FF;
+.infoSectionForCard {
+  background-color: #f0f3ff;
   height: 40%;
   display: flex;
   flex-direction: column;
@@ -81,7 +79,7 @@
   padding-left: 5%;
   gap: 10px;
 }
-.buttonBodyOnCard{
+.buttonBodyOnCard {
   height: 10%;
   background-color: #201658;
   display: flex;
@@ -89,20 +87,21 @@
   align-items: center;
   gap: 20px;
 }
-.showFullDetailsButton{
+.showFullDetailsButton {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.searchAnotherUserButton{
+.searchAnotherUserButton {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.fullDeatailsBody{
-  background-color: #EFECEC;
+.fullDeatailsBody {
+  border-radius: 10px;
+  background-color: #efecec;
   padding: 5%;
   margin-top: 10%;
   border: 2px solid black;
@@ -112,6 +111,16 @@
   gap: 20px;
   justify-content: center;
 }
-a{
+a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .fullDeatailsBody {
+    width: 350px;
+  }
+  .alertBar {
+    width: 350px;
+    font-size: 18px;
+  }
 }
