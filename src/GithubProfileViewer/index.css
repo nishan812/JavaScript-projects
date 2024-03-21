@@ -59,28 +59,31 @@
 }
 .imageSection{
   border-bottom:2px solid black ;
+  background-color: #201658;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .image{
+ 
   height: 90%;
   width: 65%;
   background-size: cover;
 }
 .infoSectionForCard{
-  background-color: red;
+  background-color: #F0F3FF;
   height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;padding-left: 10%;
+  align-items: flex-start;
+  padding-left: 5%;
   gap: 10px;
 }
 .buttonBodyOnCard{
   height: 10%;
-  background-color: blue;
+  background-color: #201658;
   display: flex;
   justify-content: center;
   align-items: center;
