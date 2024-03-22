@@ -3,3 +3,15 @@
     padding: 0;
     border: border-box;
 }
+.root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.clockBody{
+    border: 2px solid black;
+    height: 100px;
+    width: 500px;
+}
