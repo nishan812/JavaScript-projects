@@ -4,6 +4,7 @@
     border: border-box;
 }
 .root{
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,11 +12,14 @@
 
 }
 .clockBody{
-    border: 2px solid black;
+    border: 2px solid #15F5BA;
+    border-radius: 20px;
     height: 100px;
     width: 500px;
     display: flex;
     font-size: 60px;
+    background-color: #211951;
+    color: #836FFF;
 }
 
 .hourBody{
@@ -37,7 +41,7 @@
 }
 
 .minuteBody{
-    border-left: 2px solid black;
+    border-left: 2px solid #15F5BA;
     height: 100%;
     width: 30%;
     height: 100%;
@@ -47,7 +51,7 @@
 }
 
 .secondBody{
-    border-left: 2px solid black;
+    border-left: 2px solid #15F5BA;
     width: 30%;
     height: 100%;
     height: 100%;
