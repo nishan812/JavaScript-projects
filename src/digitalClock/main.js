@@ -66,8 +66,8 @@ setInterval(() => {
 
 hourBody.textContent=converted_hour
 am_pmBody.textContent=am_pm
-minuteBody.textContent=minute
-secondBody.textContent=second
+minuteBody.textContent=minute>=0&&minute<9?"0"+minute:minute
+secondBody.textContent=second>=0&&second<9?"0"+second:second
 
   console.log( converted_hour, am_pm, minute, second);
 }, 1000);
