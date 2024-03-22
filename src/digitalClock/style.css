@@ -14,4 +14,26 @@
     border: 2px solid black;
     height: 100px;
     width: 500px;
+    display: flex;
+}
+
+.am_pmBody{
+    background-color: red;
+    width: 10%;
+    height: 100%;
+}
+.hourBody{
+    background-color: blue;
+    width: 10%;
+    height: 100%;
+}
+.minuteBody{
+    background-color: yellow;
+    height: 100%;
+    width: 10%;
+}
+.secondBody{
+    background-color: green;
+    width: 10%;
+    height: 100%;
 }

@@ -1,13 +1,31 @@
-const root = document.querySelector(".root");
 
+let date, year, hour, am_pm, minute, second;
+
+const root = document.querySelector(".root");
 const clockBody = document.createElement("div");
 clockBody.classList.add("clockBody");
 root.appendChild(clockBody);
 
-let date, year, hour, am_pm, minute, second;
 
-const yearBody = document.createElement("div");
-clockBody.appendChild(yearBody);
+
+const hourBody = document.createElement("div");
+hourBody.classList.add("hourBody")
+clockBody.appendChild(hourBody);
+
+const am_pmBody = document.createElement("div");
+am_pmBody.classList.add("am_pmBody")
+clockBody.appendChild(am_pmBody);
+
+const minuteBody = document.createElement("div");
+minuteBody.classList.add("minuteBody")
+clockBody.appendChild(minuteBody);
+
+const secondBody = document.createElement("div");
+secondBody.classList.add("secondBody")
+clockBody.appendChild(secondBody);
+
+
+
 
 setInterval(() => {
   date = new Date();
@@ -16,7 +34,7 @@ setInterval(() => {
   hour = date.getHours();
   minute = date.getMinutes();
   second = date.getSeconds();
-  am_pm = hour >= 12 ? "pm" : "am";
+  am_pm = hour >= 12 ? "PM" : "AM";
 
   converted_hour =
     hour == 13
@@ -45,5 +63,11 @@ setInterval(() => {
       ? 12
       : hour;
 
-  console.log(year, converted_hour, am_pm, minute, second);
+
+hourBody.textContent=converted_hour
+am_pmBody.textContent=am_pm
+minuteBody.textContent=minute
+secondBody.textContent=second
+
+  console.log( converted_hour, am_pm, minute, second);
 }, 1000);
