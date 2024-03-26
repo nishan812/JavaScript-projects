@@ -90,6 +90,13 @@ smowRedirect.appendChild(smowAnchor);
 smowAnchor.setAttribute("href", "#");
 smowAnchor.innerHTML = "Send a Message to a User on Whatsapp";
 
+// Button to redirect bin packing
+const binpacking = document.createElement("li");
+const binpackingAnchor = document.createElement("a");
+binpacking.appendChild(binpackingAnchor);
+binpackingAnchor.setAttribute("href", "https://bin-packing.vercel.app/");
+binpackingAnchor.innerHTML = "Bin Packing";
+
 const items = [
   {
     link: bmiRedirect,
@@ -131,17 +138,13 @@ const items = [
     discription: "A system that suggests you movie that you may like. ",
   },
   {
-    link: smowRedirect,
-    discription: "Send message to user on whatsapp.",
-  },
-  {
-    link: wssRedirect,
-    discription: "Search on wikipedia made easy.",
-  },
-  {
     link: dictAppRedirect,
     discription: "A dictionary app for your english betterment.",
   },
+  {
+    link:binpacking,
+    discription:"An algorithm used to fit items utilizing the all possible spaces"
+  }
 ];
 
 items.forEach((item) => {
