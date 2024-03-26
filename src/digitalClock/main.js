@@ -61,7 +61,7 @@ setInterval(() => {
       ? 11
       : hour == 24
       ? 12
-      : hour;
+      : hour==0?12:hour;
 
 
 hourBody.textContent=converted_hour
