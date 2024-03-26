@@ -18,7 +18,7 @@ formValidationAnchor.setAttribute("href", "/src/formValidation/index.html");
 const todoRedirect = document.createElement("li");
 const todoAnchor = document.createElement("a");
 todoRedirect.appendChild(todoAnchor);
-todoAnchor.innerHTML = "Todo List App";
+todoAnchor.innerHTML = "ToDo Manager";
 todoAnchor.setAttribute("href", "/src/todoList/index.html");
 
 // Button to redirect to  background color picker
@@ -40,7 +40,7 @@ const PMG = document.createElement("li");
 const PMGAnchor = document.createElement("a");
 PMG.appendChild(PMGAnchor);
 PMGAnchor.innerHTML = "Popup Message Generation";
-PMGAnchor.setAttribute("href", "");
+PMGAnchor.setAttribute("href", "#");
 
 //gettinig root for box of list that contains projects that uses api list
 const apiProjectsBody = document.querySelector(".apiProjectsList");
@@ -99,19 +99,44 @@ binpackingAnchor.innerHTML = "Bin Packing";
 
 const items = [
   {
-    link: bmiRedirect,
+    link: binpacking,
     discription:
-      "Body mass index calculator, calculate your BMI and improve your health.",
+      "An algorithm used to fit items utilizing the all possible spaces",
+  },
+  {
+    link: dictAppRedirect,
+    discription: "A dictionary app for your english betterment.",
+  },
+
+  {
+    link: mrsRedirect,
+    discription: "A system that suggests you movie that you may like. ",
+  },
+  {
+    link: githubProfileViewerRedirect,
+    discription: "Search any users on github and view their all details.",
+  },
+  {
+    link: todoRedirect,
+    discription:
+      " Advance To-Do list manager for managing your tasks, with advance features. ",
+  },
+  {
+    link: quoteGeneratorRedirect,
+    discription: "A simple quote generator ",
   },
   {
     link: formValidationRedirect,
     discription: "A simple form with validation.",
   },
+  
+ 
   {
-    link: todoRedirect,
+    link: bmiRedirect,
     discription:
-      " Advance To-Do list for managing your tasks, with advance features. ",
+      "Body mass index calculator, calculate your BMI and improve your health.",
   },
+
   {
     link: hcpRedirect,
     discription: "Change backgroud according way you like. ",
@@ -124,27 +149,8 @@ const items = [
     link: PMG,
     discription:
       "A popup message generator, Generates message after you click.",
-  },
-  {
-    link: quoteGeneratorRedirect,
-    discription: "A simple quote generator ",
-  },
-  {
-    link: githubProfileViewerRedirect,
-    discription: "Search any users on github and view their all details.",
-  },
-  {
-    link: mrsRedirect,
-    discription: "A system that suggests you movie that you may like. ",
-  },
-  {
-    link: dictAppRedirect,
-    discription: "A dictionary app for your english betterment.",
-  },
-  {
-    link:binpacking,
-    discription:"An algorithm used to fit items utilizing the all possible spaces"
   }
+  
 ];
 
 items.forEach((item) => {
