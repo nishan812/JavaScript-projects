@@ -10,6 +10,21 @@ body {
   color: black;
   background-color: #240a34;
 }
+.msgBody {
+  height: 25px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight:lighter;
+}
 .wordSearchBody {
   background-color: #9195f6;
   margin-top: 20px;
@@ -35,7 +50,7 @@ body {
 }
 
 .resultBody {
-    margin-top: 50px;
+  margin-top: 50px;
   background-color: #240a34;
 
   display: flex;
@@ -77,18 +92,17 @@ body {
   background-color: #9bb0c1;
 }
 .definitonsOutput {
-    border-radius: 10px;
-    margin-top: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
   height: 300px;
   width: 600px;
-  background-color: #B5C0D0;
+  background-color: #b5c0d0;
   overflow-y: scroll;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
 .definitonHeading {
-
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
@@ -97,18 +111,17 @@ body {
   font-style: italic;
 }
 .defnsBody {
-    
-    border-radius: 10px;
-  background-color: #B7C9F2;
-  padding-top:10px ;
-  padding-bottom:10px ;
-  padding-left:15px ;
-  padding-right:15px ;
+  border-radius: 10px;
+  background-color: #b7c9f2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 10px;
 }
 .examplesBody {
-    margin-top: 50px;
-  background-color: #0F2167;
+  margin-top: 50px;
+  background-color: #0f2167;
   height: 120px;
   width: 600px;
   overflow-y: scroll;
@@ -118,20 +131,20 @@ body {
   padding-bottom: 20px;
 }
 .examplesHeading {
-    color: #15F5BA;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid #F72798;
-    font-style: italic;
+  color: #15f5ba;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #f72798;
+  font-style: italic;
 }
 .examplesItems {
-    border-radius: 10px;
-  background-color: #EEEDEB;
-  padding-top:10px ;
-  padding-bottom:10px ;
-  padding-left:15px ;
-  padding-right:15px ;
+  border-radius: 10px;
+  background-color: #eeedeb;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 10px;
 }

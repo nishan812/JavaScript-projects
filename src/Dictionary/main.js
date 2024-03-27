@@ -3,6 +3,20 @@ String.prototype.capitalize = function () {
 };
 
 const root = document.querySelector(".root");
+const body = document.querySelector('body');
+
+function alertMessage(msg){
+   
+    const msgBody = document.createElement("div")
+    msgBody.classList.add("msgBody")
+    msgBody.textContent=`Alert: ${msg}`
+    root.insertAdjacentElement("beforebegin",msgBody)
+    setTimeout(() => {
+        msgBody.remove()
+        
+    }, 3000);
+
+}
 
 const wordSearchBody = document.createElement("div");
 wordSearchBody.classList.add("wordSearchBody");
@@ -26,6 +40,7 @@ function search(event) {
     const wordToSearch = inputBody.value.trim().toLowerCase();
 
     if (wordToSearch == "") {
+        alertMessage("oops empty")
       console.log("is empty");
     } else {
 
@@ -136,6 +151,7 @@ function search(event) {
         })
         .catch(() => {
           console.log("failed");
+          searchButton.disabled=false;
         });
     }
   }
