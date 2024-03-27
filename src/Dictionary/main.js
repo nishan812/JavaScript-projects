@@ -29,8 +29,15 @@ function search(event) {
       console.log("is empty");
     } else {
 
-        if(root.children[1]){
-            root.children[1].remove()
+        inputBody.value="";
+
+    
+        searchButton.disabled=true;
+
+        if(root.children.length>1){
+          for(let i=1;i<root.children.length;i++){
+            root.children[i].remove()
+          }
         }
       
 
@@ -123,6 +130,9 @@ function search(event) {
             examplesItems.textContent = `${i + 1}. ${item}`;
             examplesBody.appendChild(examplesItems);
           });
+
+          searchButton.disabled=false;
+  
         })
         .catch(() => {
           console.log("failed");
