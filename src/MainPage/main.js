@@ -80,7 +80,7 @@ wssAnchor.innerHTML = "Wikipedia Search";
 const dictAppRedirect = document.createElement("li");
 const dictAppAnchor = document.createElement("a");
 dictAppRedirect.appendChild(dictAppAnchor);
-dictAppAnchor.setAttribute("href", "#");
+dictAppAnchor.setAttribute("href", "/src/Dictionary/index.html");
 dictAppAnchor.innerHTML = "Dictionary App";
 
 // Button to redirect to send Message on whatsapp
