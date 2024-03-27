@@ -5,7 +5,6 @@
 }
 .root {
   color: black;
-  display: flex;
 }
 .wordSearchBody {
   margin-top: 20px;
@@ -29,4 +28,29 @@
   outline: none;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.resultBody{
+    background-color: green;
+    height: 600px;
+}
+.wordAndPhoneticDisplayingBody{
+    border: 2px solid black;
+    height: 100px;
+    
+}
+.displayWord{
+    font-size: 25px;
+
+}
+.displayPhonetic{
+    background-color: blue;
+
+}
+.definitonsOutput{
+    height: 200px;
+    width: 500px;
+    background-color: aqua;
+    overflow-x: scroll;
+    
 }
