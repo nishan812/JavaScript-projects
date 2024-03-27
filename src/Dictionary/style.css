@@ -1,8 +1,32 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  border: border-box;
 }
-.root{
-    color: black;
+.root {
+  color: black;
+  display: flex;
+}
+.wordSearchBody {
+  margin-top: 20px;
+  background-color: red;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputBody {
+  width: 250px;
+  text-align: center;
+  height: 50%;
+  border: none;
+  outline: none;
+}
+.searchButton {
+  height: 50%;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
 }
