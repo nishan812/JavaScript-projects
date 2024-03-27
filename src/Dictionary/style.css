@@ -65,3 +65,20 @@
     border: 2px solid black;
     margin: 10px;
 }
+.examplesBody{
+    background-color: grey;
+    height: 200px;
+    width: 500px;
+    overflow-y: scroll;
+
+}
+.examplesHeading{
+    display: flex;
+    justify-content: center;
+
+
+}
+.examplesItems{
+    border: 2px solid black;
+    margin: 10px;
+}
