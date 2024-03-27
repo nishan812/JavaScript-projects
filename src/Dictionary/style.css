@@ -3,12 +3,16 @@
   padding: 0;
   border: border-box;
 }
+body {
+  background-color: #240a34;
+}
 .root {
   color: black;
+  background-color: #240a34;
 }
 .wordSearchBody {
+  background-color: #9195f6;
   margin-top: 20px;
-  background-color: red;
   height: 60px;
   width: 100%;
   display: flex;
@@ -30,55 +34,104 @@
   padding-right: 15px;
 }
 
-.resultBody{
-    background-color: green;
-    height: 600px;
-}
-.wordAndPhoneticDisplayingBody{
-    border: 2px solid black;
-    height: 100px;
-    
-}
-.displayWord{
-    font-size: 25px;
+.resultBody {
+    margin-top: 50px;
+  background-color: #240a34;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.displayPhonetic{
-    background-color: blue;
+.wordAndPhoneticDisplayingBody {
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #dff5ff;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.displayWord {
+  border-radius: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 
+  width: fit-content;
 }
-.definitonsOutput{
-    height: 200px;
-    width: 500px;
-    background-color: aqua;
-    overflow-y: scroll;
+.displayPhonetic {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: #9bb0c1;
+}
+.definitonsOutput {
+    border-radius: 10px;
+    margin-top: 30px;
+  height: 300px;
+  width: 600px;
+  background-color: #B5C0D0;
+  overflow-y: scroll;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.definitonHeading {
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-style: italic;
+}
+.defnsBody {
     
+    border-radius: 10px;
+  background-color: #B7C9F2;
+  padding-top:10px ;
+  padding-bottom:10px ;
+  padding-left:15px ;
+  padding-right:15px ;
+  margin: 10px;
 }
-.definitonHeading{
-    background-color: red;
+.examplesBody {
+    margin-top: 50px;
+  background-color: #0F2167;
+  height: 120px;
+  width: 600px;
+  overflow-y: scroll;
+  margin-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.examplesHeading {
+    color: #15F5BA;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
-
-
+    border-bottom: 2px solid #F72798;
+    font-style: italic;
 }
-.defnsBody{
-    border: 2px solid black;
-    margin: 10px;
-}
-.examplesBody{
-    background-color: grey;
-    height: 200px;
-    width: 500px;
-    overflow-y: scroll;
-
-}
-.examplesHeading{
-    display: flex;
-    justify-content: center;
-
-
-}
-.examplesItems{
-    border: 2px solid black;
-    margin: 10px;
+.examplesItems {
+    border-radius: 10px;
+  background-color: #EEEDEB;
+  padding-top:10px ;
+  padding-bottom:10px ;
+  padding-left:15px ;
+  padding-right:15px ;
+  margin: 10px;
 }

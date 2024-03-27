@@ -82,7 +82,7 @@ function search(event) {
 
           const displayPhonetic = document.createElement("div");
           displayPhonetic.classList.add("displayPhonetic");
-          displayPhonetic.textContent = word.phonetic;
+          displayPhonetic.textContent =word.phonetic;
           wordAndPhoneticDisplayingBody.appendChild(displayPhonetic);
 
           const definitonsOutput = document.createElement("div");
