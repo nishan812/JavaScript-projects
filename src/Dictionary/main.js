@@ -85,10 +85,10 @@ function search(event) {
         definitonsOutput.classList.add("definitonsOutput");
         resultBody.appendChild(definitonsOutput)
 
-        definitions.forEach((item)=>{
+        definitions.forEach((item,i)=>{
             const defnsBody = document.createElement("div");
             defnsBody.classList.add("defnsBody")
-            defnsBody.textContent=item;
+            defnsBody.textContent=`${i+1}. ${item}`;
             definitonsOutput.appendChild(defnsBody)
         })
 

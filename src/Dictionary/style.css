@@ -54,3 +54,7 @@
     overflow-x: scroll;
     
 }
+.defnsBody{
+    border: 2px solid black;
+    margin: 10px;
+}
