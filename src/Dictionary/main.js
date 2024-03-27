@@ -22,11 +22,18 @@ searchButton.addEventListener("click", search);
 
 function search(event) {
   if (event.key == "Enter" || event.target.classList.contains("searchButton")) {
-    const wordToSearch = "hello";
+
+    const wordToSearch = inputBody.value.trim().toLowerCase();
 
     if (wordToSearch == "") {
       console.log("is empty");
     } else {
+
+        if(root.children[1]){
+            root.children[1].remove()
+        }
+      
+
       const request = fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${wordToSearch}`
       );
