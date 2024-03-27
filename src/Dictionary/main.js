@@ -85,6 +85,11 @@ function search(event) {
         definitonsOutput.classList.add("definitonsOutput");
         resultBody.appendChild(definitonsOutput)
 
+        const definitionHeading = document.createElement("div");
+        definitionHeading.classList.add("definitonHeading")
+        definitionHeading.innerHTML=`<h2>${definitions.length} Definitions Found</h2>`
+        definitonsOutput.appendChild(definitionHeading)
+
         definitions.forEach((item,i)=>{
             const defnsBody = document.createElement("div");
             defnsBody.classList.add("defnsBody")
