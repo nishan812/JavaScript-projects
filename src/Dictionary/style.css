@@ -9,6 +9,9 @@ body {
 .root {
   color: black;
   background-color: #240a34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .msgBody {
   height: 25px;
@@ -147,4 +150,14 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin: 10px;
+}
+.errorBody{
+  margin-top: 100px;
+  border: 2px solid black;
+  background-color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
 }

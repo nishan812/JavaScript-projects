@@ -92,7 +92,7 @@ function search(event) {
               }
             });
           });
-          console.log(examples);
+        //   console.log(examples); passed
 
           const resultBody = document.createElement("div");
           resultBody.classList.add("resultBody");
@@ -150,7 +150,17 @@ function search(event) {
   
         })
         .catch(() => {
+
           console.log("failed");
+          const errorBody = document.createElement("div");
+          errorBody.classList.add("errorBody");
+          errorBody.textContent="Sorry, Word not found or search request failed."
+
+
+
+
+
+          root.appendChild(errorBody)
           searchButton.disabled=false;
         });
     }
