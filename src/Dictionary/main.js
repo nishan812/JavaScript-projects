@@ -41,7 +41,6 @@ homePage.appendChild(head)
 const bd = document.createElement("div");
 bd.innerHTML="<p>This is a simple dictionary web app. You can search words and get thier Phonetic, Meanings & Examples, Feel free to use this easy and simple system. </p>"
 homePage.appendChild(bd)
-
 root.appendChild(homePage)
 
 document.addEventListener("keypress", search);
@@ -168,11 +167,6 @@ function search(event) {
           const errorBody = document.createElement("div");
           errorBody.classList.add("errorBody");
           errorBody.textContent="Sorry, Word not found or search request failed."
-
-
-
-
-
           root.appendChild(errorBody)
           searchButton.disabled=false;
         });
