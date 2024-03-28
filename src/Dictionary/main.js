@@ -5,6 +5,7 @@ String.prototype.capitalize = function () {
 const root = document.querySelector(".root");
 const body = document.querySelector('body');
 
+
 function alertMessage(msg){
    
     const msgBody = document.createElement("div")
@@ -30,6 +31,18 @@ const searchButton = document.createElement("button");
 searchButton.classList.add("searchButton");
 searchButton.textContent = "Search";
 wordSearchBody.appendChild(searchButton);
+
+const homePage = document.createElement('div')
+homePage.classList.add("homePage");
+const head = document.createElement("div");
+head.innerHTML="<h1>Welcome,</h1>"
+homePage.appendChild(head)
+
+const bd = document.createElement("div");
+bd.innerHTML="<p>This is a simple dictionary web app. You can search words and get thier Phonetic, Meanings & Examples, Feel free to use this easy and simple system. </p>"
+homePage.appendChild(bd)
+
+root.appendChild(homePage)
 
 document.addEventListener("keypress", search);
 searchButton.addEventListener("click", search);
