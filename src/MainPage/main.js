@@ -62,19 +62,6 @@ githubProfileViewerAnchor.setAttribute(
   "/src/GithubProfileViewer/index.html"
 );
 
-// Button that redirects to Movie Recommendation System
-const mrsRedirect = document.createElement("li");
-const mrsAnchor = document.createElement("a");
-mrsRedirect.appendChild(mrsAnchor);
-mrsAnchor.innerHTML = "Movie Recommendation System";
-mrsAnchor.setAttribute("href", "#");
-
-// Button to redirect to Wikipedia Search System
-const wssRedirect = document.createElement("li");
-const wssAnchor = document.createElement("a");
-wssRedirect.appendChild(wssAnchor);
-wssAnchor.setAttribute("href", "#");
-wssAnchor.innerHTML = "Wikipedia Search";
 
 // Button to redirect to Dictionary App
 const dictAppRedirect = document.createElement("li");
@@ -82,13 +69,6 @@ const dictAppAnchor = document.createElement("a");
 dictAppRedirect.appendChild(dictAppAnchor);
 dictAppAnchor.setAttribute("href", "/src/Dictionary/index.html");
 dictAppAnchor.innerHTML = "Dictionary App";
-
-// Button to redirect to send Message on whatsapp
-const smowRedirect = document.createElement("li");
-const smowAnchor = document.createElement("a");
-smowRedirect.appendChild(smowAnchor);
-smowAnchor.setAttribute("href", "#");
-smowAnchor.innerHTML = "Send a Message to a User on Whatsapp";
 
 // Button to redirect bin packing
 const binpacking = document.createElement("li");
@@ -108,10 +88,6 @@ const items = [
     discription: "A dictionary app for your english betterment.",
   },
 
-  {
-    link: mrsRedirect,
-    discription: "A system that suggests you movie that you may like. ",
-  },
   {
     link: githubProfileViewerRedirect,
     discription: "Search any users on github and view their all details.",
