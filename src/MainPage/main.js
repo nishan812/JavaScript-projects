@@ -144,12 +144,12 @@ items.forEach((item) => {
   cardBody.addEventListener("mouseover", () => {
     description.style.display = "block";
     description.style.fontSize = "15px";
-    description.style.transition="all 0.8s"
+    description.style.transition="all 0.5s"
   });
   cardBody.addEventListener("mouseout", () => {
     description.style.display = "none";
     description.style.fontSize = "10px";
-    description.style.transition="all 0.8s"
+    description.style.transition="all 0.5s"
   });
 
   cardBody.addEventListener("click", (e) => {
